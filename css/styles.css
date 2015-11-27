@@ -1,0 +1,34 @@
+.container{
+    width: 70% ;
+    margin: 0 auto;
+}
+
+header{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.formularioInicioSesion{
+    margin: 0;
+}
+
+fieldset{
+    border: 2px solid;
+}
+
+#barraSuperior{
+    margin-bottom: 2%;
+}
+
+#cuadroSesion{
+    padding: 25px;
+}
+
+#menuPrincipal{
+    width: 70%;
+    text-align: center;
+}
+
+.botonMenu{
+    margin-left: 5px;
+}
