@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CoWorking</title>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/npm.js"></script>
-        <script src="js/bootstrap.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
