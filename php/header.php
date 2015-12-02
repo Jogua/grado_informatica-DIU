@@ -1,6 +1,6 @@
 <div id="barraSuperior" class="row">
     <div class="col-md-4">
-        <img id="imagenLogo" src="images/coworking-logo.png" alt="Logo Congreso" />
+        <a href="?sec=inicio"><img id="imagenLogo" src="images/coworking-logo.png" alt="Logo Congreso" /></a>
     </div>
     <div class="col-md-8">
         <fieldset>
@@ -16,7 +16,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Enviar</button>
                 </form>
-                <!--<a href="#" >Registrate</a>-->
+                <a href='?sec=registro'>Registrate</a>
             </div>
         </fieldset>
     </div>

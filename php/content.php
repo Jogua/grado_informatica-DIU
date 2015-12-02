@@ -8,6 +8,9 @@ switch ($seccion) {
     case "inicio":
         $direccion = './php/' . $seccion . '.php';
         break;
+    case "registro":
+        $direccion = './php/registrarse.php';
+        break;
     default:
         $direccion = './php/inicio.php';
         break;
