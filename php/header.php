@@ -22,33 +22,34 @@
     </div>
 </div>
 
-<div id="menuPrincipal">
-    <?php
-    ponerMenu($seccion, "inicio", "Inicio");
-    ponerMenu($seccion, "salas", "Nuestras salas");
-    ponerMenu($seccion, "empresas", "Empresas");
-    ponerMenu($seccion, "eventos", "Eventos");
-    ponerMenu($seccion, "contacto", "Contacto");
-    ?>
-</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <!--boton de menu-->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" class="logo" alt="CoWorking"></a> <!--logo -->
+    </div>
 
-<!--<nav class="navbar navbar-default">
-    <div class="container-fluid">
-         Collect the nav links, forms, and other content for toggling 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <?php
-//                ponerMenu($seccion, "inicio", "Inicio");
-//                ponerMenu($seccion, "salas", "Nuestras salas");
-//                ponerMenu($seccion, "empresas", "Empresas");
-//                ponerMenu($seccion, "eventos", "Eventos");
-//                ponerMenu($seccion, "contacto", "Contacto");
-                ?>
-            </ul>
-        </div>/.navbar-collapse 
-    </div>/.container-fluid 
-</nav>-->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+				 <?php //if(isset($_SESSION)){ echo '<li><a href="#"><i class="fa fa-user usuario"></i>Mi cuenta</a></li>'; } else { echo '<li><a href="signin.php"><i class="fa fa-user usuario"></i>Identifícate</a></li>'; } ?>
+          
+          <?php ponerMenu($seccion, "inicio", "Inicio"); ?>
+          <?php ponerMenu($seccion, "salas", "Nuestras salas"); ?>
+          <?php ponerMenu($seccion, "empresas", "Empresas"); ?>
+          <?php ponerMenu($seccion, "eventos", "Eventos"); ?>
+          <?php ponerMenu($seccion, "contacto", "Contacto"); ?>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 
 <?php
@@ -57,8 +58,8 @@ function ponerMenu($seccion, $clave, $nombre) {
     if ($seccion == $clave) {
 //        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
 //        echo '<li class="active"><a class="btn btn-default botonMenu" href="?sec=' . $clave . '" role="button">' . $nombre . '<span class="sr-only">(current)</span></a></li>';
-        echo '<a class="btn btn-default botonMenu active" href="?sec=' . $clave . '" role="button">' . $nombre . '</a>';
+        echo '<li class="botonMenu activo"><a href="?sec=' . $clave . '" role="button">' . $nombre . '</a></li>';
     } else {
-        echo '<a class="btn btn-default botonMenu" href="?sec=' . $clave . '" role="button">' . $nombre . '</a>';
+        echo '<li class="botonMenu"><a class="botonMenu" href="?sec=' . $clave . '" role="button">' . $nombre . '</a></li>';
     }
 }

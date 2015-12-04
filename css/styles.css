@@ -28,6 +28,32 @@ fieldset{
     text-align: center;
 }
 
+.navbar-default{
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
 .botonMenu{
     margin-left: 5px;
+    border-radius: 10px;
+}
+
+.botonMenu:hover{
+    background-color: #f8f8f8;
+}
+
+.activo{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a8a8a8;
 }
