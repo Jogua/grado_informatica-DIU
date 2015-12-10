@@ -1,5 +1,8 @@
-<p>Nuestras salas</p>
+<?php $seccion="salas"; include 'header.php';?>
+<body>
+<div class="container">
 
+<p>Nuestras salas</p>
 <?php
 
 /* 
@@ -8,3 +11,5 @@
  * and open the template in the editor.
  */
 
+?>
+</div></body>

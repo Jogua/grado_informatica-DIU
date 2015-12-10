@@ -1,3 +1,7 @@
+<?php $seccion="eventos"; include 'header.php';?>
+<body>
+<div class="container">
+
 <p>Eventos</p>
 <?php
 
@@ -7,3 +11,5 @@
  * and open the template in the editor.
  */
 
+?>
+</div></body>

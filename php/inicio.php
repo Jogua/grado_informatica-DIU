@@ -1,3 +1,5 @@
+<?php $seccion="inicio" include './php/header.php';?>
+
 <p>Inicio</p>
 
 <div id="carousel" class="carousel slide" data-ride="carousel">

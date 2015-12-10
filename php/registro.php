@@ -1,8 +1,8 @@
-<?php $seccion="contacto"; include 'header.php';?>
+<?php $seccion=""; include 'header.php';?>
 <body>
 <div class="container">
 
-<p>Contacto</p>
+<p>Registrase</p>
 <?php
 
 /* 
