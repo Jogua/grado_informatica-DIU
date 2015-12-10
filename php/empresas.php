@@ -1,6 +1,5 @@
 <?php $seccion="empresas"; include 'header.php';?>
 
-<body>
 <div class="container">
     
 <p>Empresas</p>
@@ -13,5 +12,5 @@
  */
 ?>
 </div>
-</body>
-    
+
+<?php include 'footer.php';?>

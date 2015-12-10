@@ -1,9 +1,6 @@
 <?php $seccion="inicio"; include './php/header.php';?>
 
-<body>
 <div class="container">
-<p>Inicio</p>
-
 <div id="carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -36,7 +33,7 @@
     </a>
 </div>
 </div>
-</body>
+<?php include './php/footer.php';?>
 
 <!--<html>
     

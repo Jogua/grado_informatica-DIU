@@ -1,5 +1,5 @@
 <?php $seccion="salas"; include 'header.php';?>
-<body>
+
 <div class="container">
 
 <p>Nuestras salas</p>
@@ -12,4 +12,6 @@
  */
 
 ?>
-</div></body>
+</div>
+
+<?php include 'footer.php';?>

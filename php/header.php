@@ -12,6 +12,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="../css/styles.css" rel="stylesheet" type="text/css" />
 </head>
+<body>
 <header>
     <div id="barraSuperior" class="row">
         <div class="col-md-4">
@@ -78,6 +79,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 </header>
+
 
 
 <?php

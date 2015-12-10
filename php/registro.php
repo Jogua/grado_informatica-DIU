@@ -1,5 +1,5 @@
 <?php $seccion=""; include 'header.php';?>
-<body>
+
 <div class="container">
 
 <p>Registrase</p>
@@ -12,4 +12,6 @@
  */
 
 ?>
-</div></body>
+</div>
+
+<?php include 'footer.php';?>
