@@ -1,6 +1,4 @@
-<?php $seccion="inicio" include './php/header.php';?>
-
-<p>Inicio</p>
+<?php $seccion="inicio"; include './php/header.php';?>
 
 <div id="carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
