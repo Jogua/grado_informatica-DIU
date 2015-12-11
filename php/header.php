@@ -7,9 +7,11 @@
     <?php if($seccion=="inicio"){ ?>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="css/styles2.css" rel="stylesheet" type="text/css" />
     <?php }else{ ?>
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="../css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="../css/styles2.css" rel="stylesheet" type="text/css" />
     <?php } ?>
 </head>
 <body>

@@ -1,0 +1,9 @@
+#divFormularioContacto {
+    width: 45%;
+    float: left;
+}
+
+#divMapaGoogle {
+    width: 45%;
+    float: right;
+}

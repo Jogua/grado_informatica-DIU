@@ -1,17 +1,35 @@
-<?php $seccion="contacto"; include 'header.php';?>
+<?php
+$seccion = "contacto";
+include 'header.php';
+?>
 
 <div class="container">
 
-<p>Contacto</p>
-<?php
+    <div id="divFormularioContacto">
+        <h3>Contacta con nosotros</h3>
+        <hr>
+        <form id="formularioContacto" action="scripts/contacto.php" method="post">
+            <div class="form-group">
+                <label for="labelNombre">Nombre:</label>
+                <input type="text" class="form-control" name="inputNombre" required>
+            </div>
+            <div class="form-group">
+                <label for="labelCorreo">Correo electronico:</label>
+                <input type="email" class="form-control" name="inputCorreo" required>
+            </div>
+            <div class="form-group">
+                <label for="labelConsulta">Consulta:</label>
+                <textarea class="form-control" rows="3" name="inputConsulta" required></textarea>
+            </div>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-?>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <div id="divMapaGoogle">
+        <h3>Localización</h3>
+        <hr>
+        <iframe id="floatMapa" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3178.1826164221484!2d-3.624947646207729!3d37.19589171910666!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x4dbbca09efdcad08!2sE.T.S.+de+Ingenier%C3%ADas+Inform%C3%A1tica+y+de+Telecomunicaci%C3%B3n!5e0!3m2!1ses!2ses!4v1426528921342" width="370" height="300" frameborder="0"></iframe>  
+    </div>
 </div>
 
-<?php include 'footer.php';?>
+<?php include 'footer.php'; ?>
