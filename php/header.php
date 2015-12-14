@@ -4,27 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoWorking</title>
 
-    <?php if($seccion=="inicio"){ ?>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <link href="css/styles2.css" rel="stylesheet" type="text/css" />
-    <?php }else{ ?>
-        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="../css/styles.css" rel="stylesheet" type="text/css" />
-        <link href="../css/styles2.css" rel="stylesheet" type="text/css" />
-    <?php } ?>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="../css/styles2.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <header>
     <div id="barraSuperior" class="row">
         <div class="col-md-4">
-            <?php
-            if($seccion=="inicio"){
-                echo '<a href="index.php"><img id="imagenLogo" src="images/coworking-logo.png" alt="Logo Congreso" /></a>';
-            }else{
-                echo '<a href="../index.php"><img id="imagenLogo" src="../images/coworking-logo.png" alt="Logo Congreso" /></a>';
-            }
-            ?>
+          <a href="index.php"><img id="imagenLogo" src="../images/coworking-logo.png" alt="Logo Congreso" /></a>
         </div>
         <div class="col-md-8">
             <fieldset>
@@ -40,13 +28,7 @@
                         </div>
                         <button type="submit" class="btn btn-default">Enviar</button>
                     </form>
-                    <?php
-                    if($seccion=="inicio"){
-                        echo '<a href="php/registro.php">Registrate</a>';
-                    }else{
-                        echo '<a href="registro.php">Registrate</a>';
-                    }
-                    ?>
+                    <a href="registro.php">Registrate</a>
                 </div>
             </fieldset>
         </div>
@@ -70,7 +52,7 @@
           <ul class="nav navbar-nav">
                      <?php //if(isset($_SESSION)){ echo '<li><a href="#"><i class="fa fa-user usuario"></i>Mi cuenta</a></li>'; } else { echo '<li><a href="signin.php"><i class="fa fa-user usuario"></i>Identifícate</a></li>'; } ?>
 
-              <?php ponerMenu($seccion, "inicio", "Inicio"); ?>
+              <?php ponerMenu($seccion, "index", "Inicio"); ?>
               <?php ponerMenu($seccion, "salas", "Nuestras salas"); ?>
               <?php ponerMenu($seccion, "empresas", "Empresas"); ?>
               <?php ponerMenu($seccion, "eventos", "Eventos"); ?>
@@ -82,20 +64,10 @@
     </nav>
 </header>
 
-
-
 <?php
 
 function ponerMenu($seccion, $clave, $nombre) {
-    if($seccion == "inicio"){
-        if ($seccion == $clave) {
-            echo '<li class="botonMenu activo"><a href="index.php" role="button">' . $nombre . '</a></li>';
-        } else  {
-            echo '<li class="botonMenu"><a class="botonMenu" href="php/' . $clave . '.php" role="button">' . $nombre . '</a></li>';
-        }
-    }else if($clave == "inicio"){ //$seccion no es la activa
-        echo '<li class="botonMenu"><a class="botonMenu" href="../index.php" role="button">' . $nombre . '</a></li>';   
-    }else if ($seccion == $clave) {
+    if ($seccion == $clave) {
         echo '<li class="botonMenu activo"><a href="' . $clave . '.php" role="button">' . $nombre . '</a></li>';
     } else {
         echo '<li class="botonMenu"><a class="botonMenu" href="' . $clave . '.php" role="button">' . $nombre . '</a></li>';
