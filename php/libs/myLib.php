@@ -1,24 +1,23 @@
 <?php
- function dbConnect() {
-    $servername = "127.0.0.1";
-    $username = "root";
-    $password = "";
-    $dbname = "mda";
-
+function dbConnect() {
+   $servername = "127.0.0.1";
+   $username = "root";
+   $password = "";
+   $dbname = "diu";
 // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+   $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    return $conn;
+   if (!$conn) {
+       die("Connection failed: " . mysqli_connect_error());
+   }
+   return $conn;
 }
 
 function salir($str, $url) {
     echo '<script>
             alert("' . $str . '");
             location.href= " ' . $url . '";
-        </script>';    
+        </script>';
 }
 
 function salir2($str, $code, $url) {

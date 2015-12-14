@@ -118,3 +118,20 @@ fieldset{
 .filaEvento:hover{
     background-color: #e8e8e8;
 }
+
+#todosEventos{
+    margin-top: 20;
+}
+
+#colNombre,
+#colUbicacion,
+#colPlazas,
+#colPrecio,
+#colFecha,
+#colBotones{
+    width: 10%;
+}
+
+#colDescripcion{
+    width: 40%;
+}
