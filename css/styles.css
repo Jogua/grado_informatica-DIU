@@ -74,14 +74,6 @@ fieldset{
 	-o-transition: all 1s;
 }
 
-.izquierda{
-    float: left;
-}
-
-.derecha{
-    float: right;
-}
-
 .salaImg:hover{
 	box-shadow: 0; /* Con esto eliminamos la sombra */
 	border-radius: 0; /* Con esto eliminamos el borde redondeado */
@@ -91,7 +83,30 @@ fieldset{
 	cursor:pointer;
 }
 
+.izquierda{
+    float: left;
+}
+
+.derecha{
+    float: right;
+}
+
 .contenidoSala{
   text-align: justify;
   margin-bottom: 3%;
+}
+
+.empresaImg{
+  width: 189;
+  height: 189;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+  margin-top: 5%;
+	border-radius: 5%; /* Borde redondeado */
+	box-shadow: 0px 0px 2px #000; /* Sombra */
+	padding:0;
+	border:0;
 }
