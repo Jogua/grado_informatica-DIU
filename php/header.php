@@ -4,15 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoWorking</title>
 
-    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="../css/styles.css" rel="stylesheet" type="text/css" />
-    <link href="../css/styles2.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/styles2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
+<?php if(!isset($_SESSION)){ session_start();} ?>
 <body>
 <header>
     <div id="barraSuperior" class="row">
         <div class="col-md-4">
-          <a href="index.php"><img id="imagenLogo" src="../images/coworking-logo.png" alt="Logo Congreso" /></a>
+          <a href="index.php"><img id="imagenLogo" src="../assets/images/coworking-logo.png" alt="Logo Congreso" /></a>
         </div>
         <div class="col-md-8">
             <fieldset>

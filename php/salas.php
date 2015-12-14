@@ -3,7 +3,7 @@
 <div class="container">
     <h3>Nuestras salas</h3>
     <?php
-    include 'dbConnect.php';
+    include 'libs/myLib.php';
     $conn = dbConnect();
 
     $sql = "SELECT * FROM sala;";

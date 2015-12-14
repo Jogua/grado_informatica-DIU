@@ -110,3 +110,11 @@ fieldset{
 	padding:0;
 	border:0;
 }
+
+.margen{
+    margin-top: 5;
+}
+
+.filaEvento:hover{
+    background-color: #e8e8e8;
+}
