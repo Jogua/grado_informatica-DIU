@@ -15,7 +15,6 @@ include 'header.php';
         <div class="form-group">
             <button type="submit" class="btn btn-primary inicioSesion derecha">Recordar Contraseña</button>
             <small class="izquierda">¿No estás registrado? <a href="registro.php">Regístrate</a></small>
-
         </div>
     </form>
 </div>

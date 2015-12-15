@@ -23,26 +23,40 @@ if (!isset($_SESSION)) {
             <div class="col-md-8">
                 <fieldset>
                     <div id="cuadroSesion">
-                        <form class="form-inline formularioInicioSesion">
-                            <div class="form-group">
-                                <label class="sr-only" for="email">Correo electrónico</label>
-                                <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+                        <?php
+                        if (!isset($_SESSION['correo'])) {
+                            ?>
+                            <form class="form-inline formularioInicioSesion">
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="password">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                                </div>
+                                <button type="submit" class="btn btn-default">Enviar</button>
+                            </form>
+                            <div>
+                                <a class="izquierda" href="registro.php">Regístrate</a>
+                                <a class="etiquetaRecordarContrasena" href="recordarContrasena.php">¿Has olvidado tu contraseña?</a>
                             </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="password">Contraseña</label>
-                                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                            <?php
+                        } else {
+                            ?>
+                            <div>
+                                <a class="izquierda" href="miCuenta.php"> <?= $_SESSION['correo'] ?> (Mi cuenta)</a>
+                                <a class="derecha" href="scripts/cerrarSesion.php">Cerrar sesión</a>
                             </div>
-                            <button type="submit" class="btn btn-default">Enviar</button>
-                        </form>
-                        <div>
-                            <a class="izquierda" href="registro.php">Regístrate</a>
-                            <a class="etiquetaRecordarContrasena" href="recordarContrasena.php">¿Has olvidado tu contraseña?</a>
-                        </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </fieldset>
             </div>
         </div>
     </header>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
