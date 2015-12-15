@@ -58,6 +58,10 @@ fieldset{
     border-color: #a8a8a8;
 }
 
+.carouselImg{
+    width: 100%;
+}
+
 .salaImg{
   width: 25%;
   position: relative;

@@ -15,13 +15,13 @@ include 'header.php';
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="../assets/images/carousel1.png" alt="">
+                <img class="carouselImg" src="../assets/images/carousel1.png" alt="">
             </div>
             <div class="item">
-                <img src="../assets/images/carousel2.png" alt="">
+                <img class="carouselImg" src="../assets/images/carousel2.png" alt="">
             </div>
             <div class="item">
-                <img src="../assets/images/carousel3.png" alt="">
+                <img class="carouselImg" src="../assets/images/carousel3.png" alt="">
             </div>
         </div>
 

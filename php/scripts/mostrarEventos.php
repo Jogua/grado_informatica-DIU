@@ -35,7 +35,7 @@
                     <td><?= $evento['nombre'] ?></td>
                     <td><?php
                         if (strlen($evento['descripcion']) > 130) {
-                            echo str_split($evento['descripcion'], 130)[0] . '... ' . '<a href="#' . $evento['id'] . '">Más</a>';
+                            echo str_split($evento['descripcion'], 130)[0] . '... ' . '<a href="#' . $evento['id'] . '">Continuar</a>';
                         } else {
                             echo $evento['descripcion'];
                         }
