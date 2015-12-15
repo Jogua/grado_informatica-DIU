@@ -1,5 +1,7 @@
-<?php $seccion = "empresas";
-include 'header.php'; ?>
+<?php
+$seccion = "empresas";
+include 'header.php';
+?>
 
 <div class="container">
     <h3>Nuestras empresas</h3>
