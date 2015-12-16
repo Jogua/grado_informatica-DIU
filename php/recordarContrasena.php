@@ -11,6 +11,7 @@ include 'header.php';
             <label>Email</label>
             <input type="email" pattern="^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$" class="form-control" id="correo" name="correo" placeholder="Email" required>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary inicioSesion derecha">Recordar Contraseña</button>

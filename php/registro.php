@@ -6,10 +6,10 @@ include 'header.php';
 <div class="container">
     <h3>Regístrate</h3>
     <hr>
-    <form class="form-signin" method="POST" id="formularioRegistroUsuario" name="formularioRegistroUsuario" action="" data-toggle="validator" enctype="multipart/form-data">
+    <form class="form-signin" method="POST" id="formularioRegistroUsuario" name="formularioRegistroUsuario"  action="javascript:enviarFormularioRegistro()" data-toggle="validator">
         <div class="form-group">
             <label>Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Carlos">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Carlos" autofocus>
         </div>
         <div class="form-group">
             <label>Apellidos</label>
@@ -19,16 +19,19 @@ include 'header.php';
             <label>Correo electrónico</label>
             <input type="email" pattern="^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$" class="form-control" id="correo" name="correo" placeholder="ejemplo@ejemplo.com" required>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <div class="help-block with-errors"></div>
         </div>
         <div class="form-group has-feedback">
             <label>Contraseña</label>
-            <input type="password" data-minlength="6" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+            <input type="password" data-minlength="6" data-minlength-error="Mínimo 6 caracteres" class="form-control" id="pass" name="pass" placeholder="Contraseña"  required>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <div class="help-block with-errors"></div>
         </div>
         <div class="form-group has-feedback">
             <label>Repetir contraseña</label>
-            <input type="password" class="form-control" id="password2" name="password2" data-match="#password" placeholder="Repetir contraseña" required>
+            <input type="password" class="form-control" id="pass2" name="pass2" data-match="#pass" data-match-error="Las contraseñas no coinciden" placeholder="Repetir contraseña" required>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <label>Teléfono</label>

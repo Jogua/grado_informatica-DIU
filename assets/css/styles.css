@@ -34,13 +34,13 @@ fieldset{
 }
 
 .navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
 }
 
 .navbar .navbar-collapse {
-  text-align: center;
+    text-align: center;
 }
 
 .botonMenu{
@@ -67,28 +67,28 @@ fieldset{
 }
 
 .salaImg{
-  width: 25%;
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-top: 5%;
-	border-radius: 50%; /* Borde redondeado */
-	box-shadow: 0px 0px 2px #000; /* Sombra */
-	padding:0;
-	border:0;
-	-moz-transition: all 1s;
-	-webkit-transition: all 1s;
-	-o-transition: all 1s;
+    width: 25%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 5%;
+    border-radius: 50%; /* Borde redondeado */
+    box-shadow: 0px 0px 2px #000; /* Sombra */
+    padding:0;
+    border:0;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
 }
 
 .salaImg:hover{
-	box-shadow: 0; /* Con esto eliminamos la sombra */
-	border-radius: 0; /* Con esto eliminamos el borde redondeado */
-	-moz-transition: all 1s;
-	-webkit-transition: all 1s;
-	-o-transition: all 1s;
-	cursor:pointer;
+    box-shadow: 0; /* Con esto eliminamos la sombra */
+    border-radius: 0; /* Con esto eliminamos el borde redondeado */
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    cursor:pointer;
 }
 
 .izquierda{
@@ -100,23 +100,23 @@ fieldset{
 }
 
 .contenidoSala{
-  text-align: justify;
-  margin-bottom: 3%;
+    text-align: justify;
+    margin-bottom: 3%;
 }
 
 .empresaImg{
-  width: 189;
-  height: 189;
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0 auto;
-  margin-top: 5%;
-	border-radius: 5%; /* Borde redondeado */
-	box-shadow: 0px 0px 2px #000; /* Sombra */
-	padding:0;
-	border:0;
+    width: 189;
+    height: 189;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+    margin-top: 5%;
+    border-radius: 5%; /* Borde redondeado */
+    box-shadow: 0px 0px 2px #000; /* Sombra */
+    padding:0;
+    border:0;
 }
 
 .margen{
@@ -129,6 +129,13 @@ fieldset{
 
 #todosEventos{
     margin-top: 20;
+}
+
+.alertas{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 #colNombre,
