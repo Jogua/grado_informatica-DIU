@@ -14,12 +14,6 @@ include 'header.php';
     </div>
 
     <div id="todosEventos">
-<!--        <script>
-            window.onload = function () {
-                MostrarConsultaEventos();
-            }
-        </script>-->
-
         <table class="table">
             <thead>
                 <tr>
