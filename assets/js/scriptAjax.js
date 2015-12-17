@@ -14,13 +14,11 @@ function MostrarConsultaEventos() {
 }
 
 function enviarFormularioRegistro() {
-    alert("Empieza");
     $.ajax({
         data: $('#formularioRegistroUsuario').serialize(), //codifica y manda los datos por el metodo seleccionado
         url: '../php/scripts/registro.php',
         type: 'POST',
         success: function (response) {
-            alert("exito");
             $("#resultado").html(response);
         }
 
