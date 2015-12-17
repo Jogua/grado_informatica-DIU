@@ -27,14 +27,14 @@ if (!isset($_SESSION)) {
                         <?php
                         if (!isset($_SESSION['correo'])) {
                             ?>
-                            <form class="form-inline formularioInicioSesion">
+                            <form class="form-inline" id="formularioInicioSesion" action="javascript:enviarFormularioInicioSesion()">
                                 <div class="form-group">
-                                    <label class="sr-only" for="email">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+                                    <label class="sr-only" for="correo">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="correo" placeholder="Correo electrónico">
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="password">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                                    <label class="sr-only" for="pass">Contraseña</label>
+                                    <input type="password" class="form-control" id="pass" placeholder="Contraseña">
                                 </div>
                                 <button type="submit" class="btn btn-default">Enviar</button>
                             </form>
@@ -98,3 +98,4 @@ if (!isset($_SESSION)) {
             echo '<li class="botonMenu"><a class="botonMenu" href="' . $clave . '.php" role="button">' . $nombre . '</a></li>';
         }
     }
+    

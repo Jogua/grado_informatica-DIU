@@ -13,9 +13,20 @@ function MostrarConsultaEventos() {
     });
 }
 
+function enviarFormularioInicioSesion() {
+    $.ajax({
+        data: $("#formularioInicioSesion").serialize(), //codifica y manda los datos por el metodo seleccionado
+        url: '../php/scripts/login.php',
+        type: 'POST',
+        success: function (response) {
+            $("#resultado").html(response);
+        }
+    });
+}
+
 function enviarFormularioRegistro() {
     $.ajax({
-        data: $('#formularioRegistroUsuario').serialize(), //codifica y manda los datos por el metodo seleccionado
+        data: $('#formularioRegistroUsuario').serialize(),
         url: '../php/scripts/registro.php',
         type: 'POST',
         success: function (response) {
@@ -24,19 +35,3 @@ function enviarFormularioRegistro() {
 
     });
 }
-
-//$('#formularioRegistroUsuario').on('submit', function (e) {
-//    e.preventDefault(); //para que no se ejecute el action del formulario
-//    alert("Empieza");
-//    $.ajax({
-//        data: $('#formularioRegistroUsuario').serialize(), //codifica y manda los datos por el metodo seleccionado
-//        url: 'scripts/registro.php',
-//        type: 'POST',
-//        success: function (response) {
-//            $("#alertas").html(response);
-//        }
-//
-//    });
-//    alert("Acaba");
-//});
-
