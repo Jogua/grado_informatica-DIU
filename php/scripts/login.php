@@ -2,9 +2,9 @@
 
 include_once "../libs/myLib.php";
 
-if (!empty($_POST['correo']) && !empty($_POST['pass'])) {
+if (!empty($_POST['correo']) && !empty($_POST['password'])) {
     $correo = $_POST['correo'];
-    $pass = md5($_POST['pass']);
+    $pass = md5($_POST['password']);
 
     $conexion = dbConnect();
     $sql = "SELECT * FROM usuario WHERE usuario.correo='$correo'";

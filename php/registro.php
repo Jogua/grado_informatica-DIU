@@ -23,7 +23,7 @@ include 'header.php';
         </div>
         <div class="form-group has-feedback">
             <label>Contraseña</label>
-            <input type="password" data-minlength="6" data-minlength-error="Mínimo 6 caracteres" class="form-control" id="pass" name="pass" placeholder="Contraseña"  required>
+            <input type="password" id="pass" name="pass" data-minlength="6" data-minlength-error="Mínimo 6 caracteres" class="form-control" placeholder="Contraseña"  required>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
             <div class="help-block with-errors"></div>
         </div>

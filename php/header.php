@@ -36,7 +36,7 @@ if (!isset($_SESSION)) {
     			    </div>
     			    <div class="form-group">
     				<label class="sr-only" for="pass">Contraseña</label>
-				<input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" required>
+				<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
     			    </div>
     			    <button type="submit" class="btn btn-default" data-loading-text="Iniciando...">Enviar</button>
     			</form>
