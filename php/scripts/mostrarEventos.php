@@ -5,7 +5,7 @@
             <th id="colNombre">Nombre</th>
             <th id="colDescripcion">Descripción</th>
             <th id="colUbicacion">Ubicación</th>
-            <th id="colFecha">fecha</th>
+            <th id="colFecha">Fecha</th>
             <th id="colPlazas">Plazas</th>
             <th id="colPrecio">Precio</th>
             <th id="colBotones"></th>
@@ -31,11 +31,11 @@
         } else {
             while ($evento = mysqli_fetch_assoc($resultado)) {
                 ?>
-                <tr class="filaEvento" onclick="window.location = '#<?= $evento['id'] ?>'">
+                <tr class="filaEvento" onclick="window.location = 'evento.php?id=<?= $evento['id'] ?>'">
                     <td><?= $evento['nombre'] ?></td>
                     <td><?php
                         if (strlen($evento['descripcion']) > 130) {
-                            echo str_split($evento['descripcion'], 130)[0] . '... ' . '<a href="#' . $evento['id'] . '">Continuar</a>';
+                            echo str_split($evento['descripcion'], 130)[0] . '... ' . '<a href="evento.php?id=' . $evento['id'] . '">Continuar</a>';
                         } else {
                             echo $evento['descripcion'];
                         }
@@ -55,7 +55,7 @@
                     <td><?= $evento['plazas'] ?></td>
                     <td><?= $evento['precio'] ?> €</td>
                     <td>
-                        <a class="btn btn-primary" href="#<?= $evento['id'] ?>">Inscribete</a><br>
+                        <a class="btn btn-primary" href="evento.php?id=<?= $evento['id'] ?>">Detalles</a><br>
                         <!--<a class="btn btn-default margen" href="#<?= $evento['id'] ?>">Más</a>-->
                     </td>
                 </tr>
