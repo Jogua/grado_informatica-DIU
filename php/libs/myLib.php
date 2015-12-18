@@ -29,7 +29,7 @@ function salir2($str, $code, $url) {
 	    echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 	    echo '<strong>' . $str . '</strong>';
 	    if ($url != '0') {
-		echo 'En breves instantes será redirigido. Si no fuera así, puede acceder desde el siguiente <a href="' . $url . '" class="alert-link">enlace</a>';
+		echo ' En breves instantes será redirigido. Si no fuera así, puede acceder desde el siguiente <a href="' . $url . '" class="alert-link">enlace</a>';
 	    }
 	    echo '</div>';
 	    echo '<script>
