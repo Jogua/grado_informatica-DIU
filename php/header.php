@@ -24,34 +24,36 @@ if (!isset($_SESSION)) {
             <div class="col-md-8">
                 <fieldset>
                     <div id="cuadroSesion">
-                        <?php
-                        if (!isset($_SESSION['correo'])) {
-                            ?>
-                            <form class="form-inline" id="formularioInicioSesion" action="javascript:enviarFormularioInicioSesion()">
-                                <div class="form-group">
-                                    <label class="sr-only" for="correo">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="correo" placeholder="Correo electrónico">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="pass">Contraseña</label>
-                                    <input type="password" class="form-control" id="pass" placeholder="Contraseña">
-                                </div>
-                                <button type="submit" class="btn btn-default">Enviar</button>
-                            </form>
-                            <div>
-                                <a class="izquierda" href="registro.php">Regístrate</a>
-                                <a class="etiquetaRecordarContrasena" href="recordarContrasena.php">¿Has olvidado tu contraseña?</a>
-                            </div>
-                            <?php
-                        } else {
-                            ?>
-                            <div>
-                                <a class="izquierda" href="miCuenta.php"> <?= $_SESSION['correo'] ?> (Mi cuenta)</a>
-                                <a class="derecha" href="scripts/cerrarSesion.php">Cerrar sesión</a>
-                            </div>
-                            <?php
-                        }
-                        ?>
+			<?php
+//			$_SESSION['correo'] = 'josegua93@gmail.com';
+//			$_SESSION['idUsuario'] = 1;
+			if (!isset($_SESSION['correo'])) {
+			    ?>
+    			<form class="form-inline" id="formularioInicioSesion" action="javascript:enviarFormularioInicioSesion()">
+    			    <div class="form-group">
+    				<label class="sr-only" for="correo">Correo electrónico</label>
+				<input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico" required>
+    			    </div>
+    			    <div class="form-group">
+    				<label class="sr-only" for="pass">Contraseña</label>
+				<input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" required>
+    			    </div>
+    			    <button type="submit" class="btn btn-default" data-loading-text="Iniciando...">Enviar</button>
+    			</form>
+    			<div>
+    			    <a class="izquierda" href="registro.php">Regístrate</a>
+    			    <a class="etiquetaRecordarContrasena" href="recordarContrasena.php">¿Has olvidado tu contraseña?</a>
+    			</div>
+			    <?php
+			} else {
+			    ?>
+    			<div>
+    			    <a class="izquierda" href="miCuenta.php"> <?= $_SESSION['correo'] ?> (Mi cuenta)</a>
+    			    <a class="derecha" href="scripts/cerrarSesion.php">Cerrar sesión</a>
+    			</div>
+			    <?php
+			}
+			?>
                     </div>
                 </fieldset>
             </div>
@@ -74,13 +76,13 @@ if (!isset($_SESSION)) {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <?php //if(isset($_SESSION)){ echo '<li><a href="#"><i class="fa fa-user usuario"></i>Mi cuenta</a></li>'; } else { echo '<li><a href="signin.php"><i class="fa fa-user usuario"></i>Identifícate</a></li>'; } ?>
+		    <?php //if(isset($_SESSION)){ echo '<li><a href="#"><i class="fa fa-user usuario"></i>Mi cuenta</a></li>'; } else { echo '<li><a href="signin.php"><i class="fa fa-user usuario"></i>Identifícate</a></li>'; } ?>
 
-                    <?php ponerMenu($seccion, "index", "Inicio"); ?>
-                    <?php ponerMenu($seccion, "salas", "Nuestras salas"); ?>
-                    <?php ponerMenu($seccion, "empresas", "Empresas"); ?>
-                    <?php ponerMenu($seccion, "eventos", "Eventos"); ?>
-                    <?php ponerMenu($seccion, "contacto", "Contacto"); ?>
+		    <?php ponerMenu($seccion, "index", "Inicio"); ?>
+		    <?php ponerMenu($seccion, "salas", "Nuestras salas"); ?>
+		    <?php ponerMenu($seccion, "empresas", "Empresas"); ?>
+		    <?php ponerMenu($seccion, "eventos", "Eventos"); ?>
+		    <?php ponerMenu($seccion, "contacto", "Contacto"); ?>
                 </ul>
 
             </div><!-- /.navbar-collapse -->
@@ -92,10 +94,10 @@ if (!isset($_SESSION)) {
     <?php
 
     function ponerMenu($seccion, $clave, $nombre) {
-        if ($seccion == $clave) {
-            echo '<li class="botonMenu activo"><a href="' . $clave . '.php" role="button">' . $nombre . '</a></li>';
-        } else {
-            echo '<li class="botonMenu"><a class="botonMenu" href="' . $clave . '.php" role="button">' . $nombre . '</a></li>';
-        }
+	if ($seccion == $clave) {
+	    echo '<li class="botonMenu activo"><a href="' . $clave . '.php" role="button">' . $nombre . '</a></li>';
+	} else {
+	    echo '<li class="botonMenu"><a class="botonMenu" href="' . $clave . '.php" role="button">' . $nombre . '</a></li>';
+	}
     }
     
