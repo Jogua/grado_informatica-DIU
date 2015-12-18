@@ -42,7 +42,7 @@ if (!empty($correo) && !empty($pass) && !empty($pass2)) {
             $_SESSION['idUsuario'] = mysqli_insert_id($conexion);
             mysqli_close($conexion);
             //Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
-            salir2("Se ha registrado correctamente", 0, "index");
+            salir2("Se ha registrado correctamente.", 0, "index.php");
         }
     }
 }
