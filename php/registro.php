@@ -6,7 +6,7 @@ include 'header.php';
 <div class="container">
     <h3>Regístrate</h3>
     <hr>
-    <form class="form-signin" method="POST" id="formularioRegistroUsuario" name="formularioRegistroUsuario"  action="javascript:enviarFormularioRegistro()" data-toggle="validator">
+    <form class="form-signin" id="formularioRegistroUsuario" name="formularioRegistroUsuario"  action="javascript:enviarFormularioRegistro()" data-toggle="validator">
         <div class="form-group">
             <label>Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Carlos" autofocus>
