@@ -17,13 +17,13 @@ include 'header.php';
         <table class="table">
             <thead>
                 <tr>
-                    <th id="colNombre">Nombre</th>
-                    <th id="colDescripcion">Descripción</th>
-                    <th id="colUbicacion">Ubicación</th>
-                    <th id="colFecha">Fecha</th>
-                    <th id="colPlazas">Plazas</th>
-                    <th id="colPrecio">Precio</th>
-                    <th id="colBotones"></th>
+                    <th class="col10">Nombre</th>
+                    <th class="col40">Descripción</th>
+                    <th class="col10">Ubicación</th>
+                    <th class="col10">Fecha</th>
+                    <th class="col10">Plazas</th>
+                    <th class="col10">Precio</th>
+                    <th class="col10"></th>
                 </tr>
             </thead>
             <tbody>
