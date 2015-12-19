@@ -27,7 +27,7 @@ include 'header.php';
         echo '<p>';
         echo $empresa['descripcion'];
         echo '</p>';
-        echo '<p><a href="http://' . $empresa['web'] . '">';
+        echo '<p><a target="_blank" href="http://' . $empresa['web'] . '">';
         echo $empresa['web'];
         echo '</a></p>';
         echo '</div>';

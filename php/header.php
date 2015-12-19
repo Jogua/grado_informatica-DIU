@@ -25,8 +25,6 @@ if (!isset($_SESSION)) {
                 <fieldset>
                     <div id="cuadroSesion">
 			<?php
-//			$_SESSION['correo'] = 'josegua93@gmail.com';
-//			$_SESSION['idUsuario'] = 1;
 			if (!isset($_SESSION['correo'])) {
 			    ?>
     			<form class="form-inline" id="formularioInicioSesion" action="javascript:enviarFormularioInicioSesion()">

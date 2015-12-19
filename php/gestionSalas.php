@@ -44,7 +44,11 @@ if (isset($_SESSION['idUsuario'])) {
     	</thead>
     	<tbody>
 		<?php
-		$sql = "SELECT * FROM sala;";
+		if ($tipoUsuario == 'Administrador') {
+		    $sql = "SELECT * FROM sala;";
+		} else {
+		    $sql = "SELECT * FROM sala WHERE estado=1;";
+		}
 		$resultado = mysqli_query($conn, $sql);
 		while ($sala = mysqli_fetch_assoc($resultado)) {
 		    echo '<tr>';
@@ -60,15 +64,18 @@ if (isset($_SESSION['idUsuario'])) {
 		    if ($tipoUsuario == 'Administrador') {
 			echo '<td>';
 			if (!$sala['estado']) {
-			    echo '<a class="btn btn-success botonSala" href="javascript:altaSala('. $sala['id'] .')">Alta</a><br>';
+			    echo '<a class="btn btn-success botonSala" href="javascript:altaSala(' . $sala['id'] . ')">Alta</a><br>';
 			}
 			echo '<a class="btn btn-warning botonSala" href="modificarSala.php?id=' . $sala['id'] . '" readonly>Modificar</a><br>';
 			if ($sala['estado']) {
-			    echo '<a class="btn btn-danger botonSala" href="javascript:bajaSala('. $sala['id'] .')">Baja</a><br>';
+			    echo '<a class="btn btn-danger botonSala" href="javascript:bajaSala(' . $sala['id'] . ')">Baja</a><br>';
 			}
 			echo '</td>';
 		    } else {
-			
+			echo '<td>';
+			echo '<a class="btn btn-primary botonSala" href="javascript:altaSala(' . $sala['id'] . ')">Reservar</a><br>';
+			echo '<a class="btn btn-danger botonSala" href="modificarSala.php?id=' . $sala['id'] . '">Cancelar</a><br>';
+			echo '</td>';
 		    }
 		    echo '</tr>';
 		}
