@@ -42,8 +42,8 @@ function salir2($str, $code, $url) {
 	    }
 	    break;
 	case '-1':
-	    echo '<script>document.getElementById("resultado").className = "alertas animated bounceInDown";</script>';
-	    echo '<div class="alert alert-danger alert-dismissible animated bounceInDown" role="alert">';
+	    echo '<script>document.getElementById("resultado").className = "alertas animated slideInDown";</script>';
+	    echo '<div class="alert alert-danger alert-dismissible animated slideInDown" role="alert">';
 	    echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 	    echo '<strong>' . $str . '</strong>';
 	    if ($url != '0') {
@@ -60,8 +60,8 @@ function salir2($str, $code, $url) {
 	    }
 	    break;
 	default:
-	    echo '<script>document.getElementById("resultado").className = "alertas animated bounceInDown";</script>';
-	    echo '<div class="alert alert-danger alert-dismissible animated bounceInDown" role="alert">';
+	    echo '<script>document.getElementById("resultado").className = "alertas animated slideInDown";</script>';
+	    echo '<div class="alert alert-danger alert-dismissible animated slideInDown" role="alert">';
 	    echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 	    echo '<strong>Si estás viendo esto es porque algo muy malo acaba de pasar.</strong>';
 	    if ($url != '0') {
@@ -77,5 +77,43 @@ function salir2($str, $code, $url) {
             window.location.href = "' . $url . '";}, 3000);</script>';
 	    }
 	    break;
+    }
+}
+
+function cargarBotonesMiCuenta($tipoUsuario) {
+    if ($tipoUsuario == 'Administrador') {
+	?>
+	<ul class="list-inline botonesMiCuenta">
+	    <li><a class=" btn btn-default" id="salasButon" href="gestionSalas.php" role="button">Gestión de salas</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Gestión de eventos</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Gestión de empresas</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Modificar mis datos</a></li>
+	</ul>
+	<?php
+    } else if ($tipoUsuario == 'Empresa') {
+	?>
+	<ul class="list-inline botonesMiCuenta">
+	    <li><a class=" btn btn-default" href="gestionSalas.php" role="button">Gestión de salas</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Gestión de mis eventos</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Modificar datos empresa</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Modificar mis datos</a></li>
+	</ul>
+	<?php
+    } else if ($tipoUsuario == 'Organizador') {
+	?>
+	<ul class="list-inline botonesMiCuenta">
+	    <li><a class=" btn btn-default" href="#" role="button">Gestión de mis eventos</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Modificar mis datos</a></li>
+	</ul>
+	<?php
+    } else if ($tipoUsuario == 'Usuario') {
+	?>
+	<ul class="list-inline botonesMiCuenta">
+	    <li><a class=" btn btn-default" href="#" role="button">Gestión de salas</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Gestión de eventos</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Gestión de empresas</a></li>
+	    <li><a class=" btn btn-default" href="#" role="button">Modificar mis datos</a></li>
+	</ul>
+	<?php
     }
 }

@@ -138,15 +138,40 @@ fieldset{
     z-index: 1;
 }
 
-#colNombre,
-#colUbicacion,
-#colPlazas,
-#colPrecio,
-#colFecha,
-#colBotones{
+.col10{
     width: 10%;
 }
 
-#colDescripcion{
+.col40{
     width: 40%;
+}
+
+.col60{
+    width: 60%;
+}
+
+#salaImgModificar{
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 200px;
+}
+
+.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.nombreSala{
+    margin-top: 30px;
+}
+
+.botonSala{
+    width: 84;
+    margin-top: 5px;
+}
+
+.botonesMiCuenta{
+    text-align: center;
 }
