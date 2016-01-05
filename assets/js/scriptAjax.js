@@ -86,6 +86,41 @@ function filtroReservarSala() {
     });
 }
 
+function reservarSala(id) {
+    var idEmpresa = $('#idEmpresa').val();
+    var fini = $('#fechaInicioSala').val();
+    var ffin = $('#fechaFinSala').val();
+    var parametros = {
+	idSala: id,
+	idEmpresa: idEmpresa,
+	fechaInicio: fini,
+	fechaFin: ffin
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/reservarSala.php',
+	type: 'POST',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
+function cancelarReserva(id) {
+    alert(id);
+    var parametros = {
+	idReserva: id
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/cancelarReserva.php',
+	type: 'POST',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
 $(document).ready(function () {
     $('#formularioModificarSala').ajaxForm(function (response) {
 	$("#resultado").html(response);

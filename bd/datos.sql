@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-01-2016 a las 14:43:49
+-- Tiempo de generación: 05-01-2016 a las 02:33:24
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -32,20 +32,28 @@ INSERT INTO `empresa` (`id`, `nombre`, `cif`, `descripcion`, `web`, `imagen`, `i
 (11, 'Nombre empresa', 'b202024', 'descripcion descripcion ', 'paginaweb.es', 'assets/images/plano.jpg', 1);
 
 --
+-- Volcado de datos para la tabla `empresa_usa_sala`
+--
+
+INSERT INTO `empresa_usa_sala` (`id`, `idEmpresa`, `idSala`, `fechaInicio`, `fechaFin`) VALUES
+(2, 7, 1, '2015-12-24', '2015-12-26'),
+(3, 7, 2, '2016-01-03', '2016-01-05');
+
+--
 -- Volcado de datos para la tabla `evento`
 --
 
-INSERT INTO `evento` (`id`, `nombre`, `fecha`, `descripcion`, `precio`, `plazas`, `idEmpresa`) VALUES
-(1, 'Evento', '2015-12-29 18:30:00', 'descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion ', 10, 25, 8),
-(2, 'Evento2', '2015-12-28 10:00:00', 'descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion ', 5, 100, 10);
+INSERT INTO `evento` (`id`, `nombre`, `fecha`, `descripcion`, `precio`, `plazas`, `imagen`, `idEmpresa`) VALUES
+(1, 'Evento', '2015-12-29 18:30:00', 'descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion ', 10, 25, NULL, 8),
+(2, 'Evento2', '2015-12-28 10:00:00', 'descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion ', 5, 100, NULL, 10);
 
 --
 -- Volcado de datos para la tabla `sala`
 --
 
 INSERT INTO `sala` (`id`, `nombre`, `descripcion`, `ubicacion`, `capacidad`, `imagen`, `estado`) VALUES
-(1, 'Salon de Actos', 'Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.', 'Primera planta', 25, 'assets/images/salas/sala_1.jpeg', '0'),
-(2, 'Mediana', 'Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.\r\n\r\nNulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.', 'Planta baja', 50, 'assets/images/salas/sala_2.jpeg', '1');
+(1, 'Salon de Actos', 'Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.', 'Primera planta', 25, 'assets/images/salas/sala_1.jpeg', 0),
+(2, 'Mediana', 'Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.\r\n\r\nNulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.', 'Planta baja', 50, 'assets/images/salas/sala_2.jpeg', 1);
 
 --
 -- Volcado de datos para la tabla `sala_aloja_evento`
@@ -59,8 +67,10 @@ INSERT INTO `sala_aloja_evento` (`idEvento`, `idSala`) VALUES
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `apellidos`, `correo`, `password`, `telefono`, `idEmpresa`, `tipo`) VALUES
-(1, 'Jose', 'Guadix', 'josegua93@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, 'Administrador'),
-(4, '', '', 'joseguadix_5@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', 7, 'Empresa');
+(1, '', '', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, 'Administrador'),
+(4, '', '', 'empresa@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', 7, 'Empresa'),
+(5, '', '', 'organizador@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, 11, 'Organizador'),
+(6, '', NULL, 'usuario@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, 'Usuario');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
