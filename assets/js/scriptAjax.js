@@ -1,4 +1,4 @@
-function MostrarConsultaEventos() {
+function mostrarConsultaEventos() {
     var busqueda = $('#busqueda').val();
     var parametros = {
 	search: busqueda
@@ -61,6 +61,27 @@ function bajaSala(id) {
 	type: 'POST',
 	success: function (response) {
 	    $("#resultado").html(response);
+	}
+    });
+}
+
+function filtroReservarSala() {
+    var name = $('#nombreSala').val();
+    var cap = $('#capacidadSala').val();
+    var fini = $('#fechaInicioSala').val();
+    var ffin = $('#fechaFinSala').val();
+    var parametros = {
+	nombre: name,
+	capacidad: cap,
+	fechaInicio: fini,
+	fechaFin: ffin
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/filtrarSala.php',
+	type: 'POST',
+	success: function (response) {
+	    $("#salas").html(response);
 	}
     });
 }

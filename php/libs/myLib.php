@@ -14,6 +14,12 @@ function dbConnect() {
     return $conn;
 }
 
+function invertirFecha($fecha) {
+    $fechaArray = explode("-", $fecha);
+    $fecha = $fechaArray[2] . "-" . $fechaArray[1] . "-" . $fechaArray[0];
+    return $fecha;
+}
+
 function salir($str, $url) {
     echo '<script>
             alert("' . $str . '");

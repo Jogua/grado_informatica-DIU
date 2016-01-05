@@ -37,7 +37,7 @@ if (isset($_SESSION['idUsuario']) && isset($_GET['id'])) {
 	echo '<h4 class="nombreSala">' . $sala['nombre'] . '</h4>';
 	echo '<hr>';
 	?>
-        <script>document.getElementById("salasButon").className += " active";</script>
+        <script>document.getElementById("button1").className += " active";</script>
         <form class="form-signin" method="POST" id="formularioModificarSala"  action="scripts/modificarSala.php" data-toggle="validator" enctype="multipart/form-data">
     	<input type="hidden" id="idSala" name="idSala" value="<?= $idSala ?>"/>
     	<div class="form-group has-feedback">

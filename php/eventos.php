@@ -10,7 +10,7 @@ include 'header.php';
 
     <div class="input-group">
         <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
-        <input type="text" id="busqueda" name="busqueda" onkeyup="MostrarConsultaEventos();" class="form-control" placeholder="Buscar...">
+        <input type="text" id="busqueda" name="busqueda" onkeyup="mostrarConsultaEventos();" class="form-control" placeholder="Buscar...">
     </div>
 
     <div id="todosEventos">
