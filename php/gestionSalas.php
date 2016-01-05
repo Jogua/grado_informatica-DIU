@@ -22,7 +22,7 @@ if (isset($_SESSION['idUsuario'])) {
     if ($resultado) {
 	$usuario = mysqli_fetch_assoc($resultado);
 	$tipoUsuario = $usuario['tipo'];
-	if ($tipoUsuario == 'Administrador' || $tipoUsuario == 'Empresa') {
+	if ($tipoUsuario == 'Administrador') {
 	    echo '<h3>Gestión de salas</h3>';
 	    echo '<hr>';
 	} else {
@@ -31,7 +31,7 @@ if (isset($_SESSION['idUsuario'])) {
 	}
 	cargarBotonesMiCuenta($tipoUsuario);
 	?>
-        <script>document.getElementById("salasButon").className += " active";</script>
+        <script>document.getElementById("button1").className += " active";</script>
         <table class="table table-striped">
     	<thead>
     	    <tr>
@@ -44,11 +44,7 @@ if (isset($_SESSION['idUsuario'])) {
     	</thead>
     	<tbody>
 		<?php
-		if ($tipoUsuario == 'Administrador') {
-		    $sql = "SELECT * FROM sala;";
-		} else {
-		    $sql = "SELECT * FROM sala WHERE estado=1;";
-		}
+		$sql = "SELECT * FROM sala WHERE estado=1;";
 		$resultado = mysqli_query($conn, $sql);
 		while ($sala = mysqli_fetch_assoc($resultado)) {
 		    echo '<tr>';
@@ -61,22 +57,17 @@ if (isset($_SESSION['idUsuario'])) {
 		    echo '</td>';
 		    echo '<td>' . $sala['ubicacion'] . '</td>';
 		    echo '<td>' . $sala['capacidad'] . '</td>';
-		    if ($tipoUsuario == 'Administrador') {
-			echo '<td>';
-			if (!$sala['estado']) {
-			    echo '<a class="btn btn-success botonSala" href="javascript:altaSala(' . $sala['id'] . ')">Alta</a><br>';
-			}
-			echo '<a class="btn btn-warning botonSala" href="modificarSala.php?id=' . $sala['id'] . '" readonly>Modificar</a><br>';
-			if ($sala['estado']) {
-			    echo '<a class="btn btn-danger botonSala" href="javascript:bajaSala(' . $sala['id'] . ')">Baja</a><br>';
-			}
-			echo '</td>';
-		    } else {
-			echo '<td>';
-			echo '<a class="btn btn-primary botonSala" href="javascript:altaSala(' . $sala['id'] . ')">Reservar</a><br>';
-			echo '<a class="btn btn-danger botonSala" href="modificarSala.php?id=' . $sala['id'] . '">Cancelar</a><br>';
-			echo '</td>';
+
+		    echo '<td>';
+		    if (!$sala['estado']) {
+			echo '<a class="btn btn-success botonSala" href="javascript:altaSala(' . $sala['id'] . ')">Alta</a><br>';
 		    }
+		    echo '<a class="btn btn-warning botonSala" href="modificarSala.php?id=' . $sala['id'] . '" readonly>Modificar</a><br>';
+		    if ($sala['estado']) {
+			echo '<a class="btn btn-danger botonSala" href="javascript:bajaSala(' . $sala['id'] . ')">Baja</a><br>';
+		    }
+		    echo '</td>';
+
 		    echo '</tr>';
 		}
 		?>
