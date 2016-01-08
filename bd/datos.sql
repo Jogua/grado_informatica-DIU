@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-01-2016 a las 02:33:24
+-- Tiempo de generación: 08-01-2016 a las 17:45:37
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -53,7 +53,8 @@ INSERT INTO `evento` (`id`, `nombre`, `fecha`, `descripcion`, `precio`, `plazas`
 
 INSERT INTO `sala` (`id`, `nombre`, `descripcion`, `ubicacion`, `capacidad`, `imagen`, `estado`) VALUES
 (1, 'Salon de Actos', 'Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.', 'Primera planta', 25, 'assets/images/salas/sala_1.jpeg', 0),
-(2, 'Mediana', 'Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.\r\n\r\nNulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.', 'Planta baja', 50, 'assets/images/salas/sala_2.jpeg', 1);
+(2, 'Mediana', 'Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.\r\n\r\nNulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.', 'Planta baja', 50, 'assets/images/salas/sala_2.jpeg', 1),
+(3, 'TrÃ©bol', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?', 'Primera planta', 100, 'assets/images/salas/sala_3.jpeg', 1);
 
 --
 -- Volcado de datos para la tabla `sala_aloja_evento`
