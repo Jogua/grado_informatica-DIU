@@ -1,7 +1,7 @@
 <?php
 include_once '../libs/myLib.php';
 $conn = dbConnect();
-$sqlSalas = "SELECT * FROM sala WHERE ";
+$sqlSalas = "SELECT * FROM sala WHERE sala.estado=1 AND ";
 $otro = false;
 if (!empty($_POST['nombre'])) {
     $nombre = $_POST['nombre'];

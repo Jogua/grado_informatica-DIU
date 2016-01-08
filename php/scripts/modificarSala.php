@@ -10,7 +10,7 @@ if (!empty($_POST['idSala']) && !empty($_POST['descripcion']) && !empty($_POST['
     $subidaCorrecta = false;
     if (isset($_FILES['imagen']) && $_FILES['imagen']['name']) {
 	if ($_FILES['imagen']['error'] > 0) {
-	    salir("Ha ocurrido un error en la carga de la imagen", -2);
+	    salir2("Ha ocurrido un error en la carga de la imagen", -1);
 	} else {
 	    $permitidos = array("image/jpg", "image/jpeg", "image/png");
 	    $limite_kb = 2048;
@@ -25,6 +25,8 @@ if (!empty($_POST['idSala']) && !empty($_POST['descripcion']) && !empty($_POST['
 		$ruta_old = $carpeta . "/sala_" . $idSala . "_old" . $formato;
 		rename($ruta, $ruta_old);
 		$subidaCorrecta = @move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
+	    } else {
+		salir2("La imagen no tiene un formato apropiado o su tamaño es superior a 2MB", -1, 0);
 	    }
 	}
     }
@@ -42,7 +44,6 @@ if (!empty($_POST['idSala']) && !empty($_POST['descripcion']) && !empty($_POST['
 	if (isset($ruta_old)) {
 	    unlink($ruta_old);
 	}
-	//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
 	salir2("Se han guardado los cambios correctamente", 0, "gestionSalas.php");
     }
 }

@@ -44,7 +44,7 @@ if (isset($_SESSION['idUsuario'])) {
     	</thead>
     	<tbody>
 		<?php
-		$sql = "SELECT * FROM sala WHERE estado=1;";
+		$sql = "SELECT * FROM sala;";
 		$resultado = mysqli_query($conn, $sql);
 		while ($sala = mysqli_fetch_assoc($resultado)) {
 		    echo '<tr>';
@@ -73,6 +73,7 @@ if (isset($_SESSION['idUsuario'])) {
 		?>
     	</tbody>
         </table>
+        <a class="btn btn-primary" href="anadirSala.php">Añadir sala</a>
 	<?php
     }
     ?>

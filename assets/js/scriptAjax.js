@@ -125,4 +125,7 @@ $(document).ready(function () {
     $('#formularioModificarSala').ajaxForm(function (response) {
 	$("#resultado").html(response);
     });
+    $('#formularioAnadirSala').ajaxForm(function (response) {
+	$("#resultado").html(response);
+    });
 }); 
