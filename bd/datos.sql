@@ -32,14 +32,6 @@ INSERT INTO `empresa` (`id`, `nombre`, `cif`, `descripcion`, `web`, `imagen`, `i
 (11, 'Nombre empresa', 'b202024', 'descripcion descripcion ', 'paginaweb.es', 'assets/images/plano.jpg', 1);
 
 --
--- Volcado de datos para la tabla `empresa_usa_sala`
---
-
-INSERT INTO `empresa_usa_sala` (`id`, `idEmpresa`, `idSala`, `fechaInicio`, `fechaFin`) VALUES
-(2, 7, 1, '2015-12-24', '2015-12-26'),
-(3, 7, 2, '2016-01-03', '2016-01-05');
-
---
 -- Volcado de datos para la tabla `evento`
 --
 
@@ -62,6 +54,14 @@ INSERT INTO `sala` (`id`, `nombre`, `descripcion`, `ubicacion`, `capacidad`, `im
 
 INSERT INTO `sala_aloja_evento` (`idEvento`, `idSala`) VALUES
 (2, 2);
+
+--
+-- Volcado de datos para la tabla `empresa_usa_sala`
+--
+
+INSERT INTO `empresa_usa_sala` (`id`, `idEmpresa`, `idSala`, `fechaInicio`, `fechaFin`) VALUES
+(2, 7, 1, '2015-12-24', '2015-12-26'),
+(3, 7, 2, '2016-01-03', '2016-01-05');
 
 --
 -- Volcado de datos para la tabla `usuario`
