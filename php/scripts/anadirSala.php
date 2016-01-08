@@ -33,7 +33,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['descripcion']) && !empty($_POST['
 		$ruta = $carpeta . "/" . $nombreArchivo;
 		$rutaImagenBD = substr($ruta, 6);
 		rename($ruta_old, $ruta);
-		$sql = "UPDATE sala SET imagen='$rutaImagenBD';";
+		$sql = "UPDATE sala SET imagen='$rutaImagenBD' WHERE id=$idSala;";
 		$resultado = mysqli_query($conexion, $sql);
 		mysqli_close($conexion);
 		if (!$resultado) {
