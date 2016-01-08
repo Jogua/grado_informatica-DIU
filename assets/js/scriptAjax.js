@@ -107,7 +107,6 @@ function reservarSala(id) {
 }
 
 function cancelarReserva(id) {
-    alert(id);
     var parametros = {
 	idReserva: id
     };
