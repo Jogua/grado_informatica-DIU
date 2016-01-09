@@ -120,6 +120,34 @@ function cancelarReserva(id) {
     });
 }
 
+function apuntarseEvento(id) {
+    var parametros = {
+	id: id
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/apuntarseEvento.php',
+	type: 'GET',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
+function desapuntarseEvento(id) {
+    var parametros = {
+	id: id
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/desapuntarseEvento.php',
+	type: 'GET',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
 $(document).ready(function () {
     $('#formularioModificarSala').ajaxForm(function (response) {
 	$("#resultado").html(response);

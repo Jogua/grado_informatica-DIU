@@ -60,9 +60,9 @@ include_once './libs/myLib.php';
                 $sqlBoton = "SELECT idUsuario FROM usuario_asiste_evento WHERE idUsuario=$idUsuario AND idEvento=$idEvento";
                 $resultadoBoton = mysqli_query($conn, $sqlBoton);
                 if (mysqli_num_rows($resultadoBoton) == 0) {
-                    echo "<a class='btn btn-success' href='scripts/apuntarseEvento.php?id=$idEvento'> Apuntarse</a><br>";
+                    echo "<a class='btn btn-success' href='javascript:apuntarseEvento($idEvento)'> Apuntarse</a><br>";
                 } else {
-                    echo "<a class='btn btn-danger' href='scripts/desapuntarseEvento.php?id=$idEvento'> Desapuntarse</a><br>";                    
+                    echo "<a class='btn btn-danger' href='javascript:desapuntarseEvento($idEvento)'> Desapuntarse</a><br>";                    
                 }
             }
             ?>
