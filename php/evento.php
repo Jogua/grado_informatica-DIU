@@ -13,24 +13,7 @@ include_once './libs/myLib.php';
     $sql = "SELECT * FROM evento WHERE id=$idEvento;";
     $resultado = mysqli_query($conn, $sql);
     if (($evento = mysqli_fetch_assoc($resultado))) {
-
-
-
-
-
-
-//
-//
-//
-//        echo $evento['nombre'];
-//        echo $evento['descripcion'];
-////        echo $evento['ubicacion'];
-//        echo date('d/m/Y', strtotime($evento['fecha']));
-//        echo '<br>';
-//        echo date('H:i', strtotime($evento['fecha']));
-//        echo '</td>';
-//        echo $evento['plazas'];
-//        echo $evento['precio'];
+        
     }
     ?>
     <h3><?= $evento['nombre'] ?></h3>
@@ -62,7 +45,27 @@ include_once './libs/myLib.php';
             <strong>Plazas:</strong> <?= $evento['plazas']; ?>
             <br>
             <strong>Precio:</strong> <?= $evento['precio']; ?> €
+            <br>
+            <strong>Empresa:</strong> 
+            <?php
+            $sqlEmpresa = 'SELECT nombre FROM empresa WHERE id=' . $evento['idEmpresa'];
+            $resultadoEmpresa = mysqli_query($conn, $sqlEmpresa);
+            if (($empresa = mysqli_fetch_assoc($resultadoEmpresa))) {
+                echo $empresa['nombre'];
+            }
 
+            if (isset($_SESSION['idUsuario'])) {
+                echo '<br><br>';
+                $idUsuario = $_SESSION['idUsuario'];
+                $sqlBoton = "SELECT idUsuario FROM usuario_asiste_evento WHERE idUsuario=$idUsuario AND idEvento=$idEvento";
+                $resultadoBoton = mysqli_query($conn, $sqlBoton);
+                if (mysqli_num_rows($resultadoBoton) == 0) {
+                    echo "<a class='btn btn-success' href='scripts/apuntarseEvento.php?id=$idEvento'> Apuntarse</a><br>";
+                } else {
+                    echo "<a class='btn btn-danger' href='scripts/desapuntarseEvento.php?id=$idEvento'> Desapuntarse</a><br>";                    
+                }
+            }
+            ?>
         </div>
     </div>
 </div>
