@@ -148,6 +148,27 @@ function desapuntarseEvento(id) {
     });
 }
 
+function modificarMisDatos(formulario) {
+    
+    var parametros = {
+	idUsuario: formulario.idUsuario.value,
+        nombre: formulario.nombre.value,
+        apellidos: formulario.apellidos.value,
+        correo: formulario.correo.value,
+        pass: formulario.pass.value,
+        telefono: formulario.telefono.value        
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/modificarMisDatos.php',
+	type: 'POST',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
+
 $(document).ready(function () {
     $('#formularioModificarSala').ajaxForm(function (response) {
 	$("#resultado").html(response);

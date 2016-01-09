@@ -114,7 +114,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
 	    <li><a class=" btn btn-default" id="button3" href="#" role="button">Gestión de eventos</a></li>
 	    <li><a class=" btn btn-default" id="button4" href="#" role="button">Gestión de empresas</a></li>
-	    <li><a class=" btn btn-default" id="button5" href="#" role="button">Modificar mis datos</a></li>
+            <li><a class=" btn btn-default" id="button5" href="modificarMisDatos.php" role="button">Modificar mis datos</a></li>
 	</ul>
 	<?php
     } else if ($tipoUsuario == 'Empresa') {
@@ -124,7 +124,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
 	    <li><a class=" btn btn-default" id="buttonEventosCreados" href="eventosCreados.php" role="button">Eventos creados</a></li>
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
 	    <li><a class=" btn btn-default" id="button4" href="#" role="button">Modificar datos empresa</a></li>
-	    <li><a class=" btn btn-default" id="button5" href="#" role="button">Modificar mis datos</a></li>
+	    <li><a class=" btn btn-default" id="button5" href="modificarMisDatos.php" role="button">Modificar mis datos</a></li>
 	</ul>
 	<?php
     } else if ($tipoUsuario == 'Organizador') {
@@ -133,7 +133,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
 	    <li><a class=" btn btn-default" id="buttonEventosCreados" href="eventosCreados.php" role="button">Eventos creados</a></li>
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
 	    <li><a class=" btn btn-default" id="button3" href="#" role="button">Modificar datos empresa</a></li>
-	    <li><a class=" btn btn-default" id="button4" href="#" role="button">Modificar mis datos</a></li>
+	    <li><a class=" btn btn-default" id="button4" href="modificarMisDatos.php" role="button">Modificar mis datos</a></li>
 	</ul>
 	<?php
     } else if ($tipoUsuario == 'Usuario') {
@@ -141,7 +141,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
 	<ul class="list-inline botonesMiCuenta">
 	    <li><a class=" btn btn-default" id="button1" href="#" role="button">Dar de alta empresa</a></li>
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
-	    <li><a class=" btn btn-default" id="button3" href="#" role="button">Modificar mis datos</a></li>
+	    <li><a class=" btn btn-default" id="button3" href="modificarMisDatos.php" role="button">Modificar mis datos</a></li>
 	</ul>
 	<?php
     }
