@@ -121,7 +121,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
 	?>
 	<ul class="list-inline botonesMiCuenta">
 	    <li><a class=" btn btn-default" id="buttonSalas" href="misSalas.php" role="button">Mis salas</a></li>
-	    <li><a class=" btn btn-default" id="buttonEventosCreados" href="#" role="button">Eventos creados</a></li>
+	    <li><a class=" btn btn-default" id="buttonEventosCreados" href="eventosCreados.php" role="button">Eventos creados</a></li>
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
 	    <li><a class=" btn btn-default" id="button4" href="#" role="button">Modificar datos empresa</a></li>
 	    <li><a class=" btn btn-default" id="button5" href="#" role="button">Modificar mis datos</a></li>
@@ -130,7 +130,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
     } else if ($tipoUsuario == 'Organizador') {
 	?>
 	<ul class="list-inline botonesMiCuenta">
-	    <li><a class=" btn btn-default" id="buttonEventosCreados" href="#" role="button">Eventos creados</a></li>
+	    <li><a class=" btn btn-default" id="buttonEventosCreados" href="eventosCreados.php" role="button">Eventos creados</a></li>
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
 	    <li><a class=" btn btn-default" id="button3" href="#" role="button">Modificar datos empresa</a></li>
 	    <li><a class=" btn btn-default" id="button4" href="#" role="button">Modificar mis datos</a></li>
