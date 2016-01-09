@@ -31,7 +31,7 @@ if (isset($_SESSION['idUsuario'])) {
 	}
 	cargarBotonesMiCuenta($tipoUsuario);
 	?>
-        <script>document.getElementById("button1").className += " active";</script>
+        <script>document.getElementById("buttonSalas").className += " active";</script>
         <table class="table table-striped">
     	<thead>
     	    <tr>
