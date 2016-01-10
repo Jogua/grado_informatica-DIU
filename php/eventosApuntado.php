@@ -61,7 +61,7 @@ if (isset($_SESSION['idUsuario'])) {
 			    }
 			    echo '</td>';
 			    echo '<td>' . date('d-m-Y', strtotime($evento['fecha'])) . '<br>' . date('H:i', strtotime($evento['fecha'])) . '</td>';
-			    echo '<td>' . $evento['precio'] . '</td>';
+			    echo '<td>' . $evento['precio'] . ' €</td>';
 
 			    echo '<td>';
 			    echo '<a class="btn btn-danger" href="javascript:desapuntarseEvento(' . $evento['id'] . ')">Desapuntarse</a><br>';
