@@ -71,8 +71,8 @@ if (isset($_SESSION['idUsuario'])) {
 			    echo '<td>' . $evento['precio'] . ' €</td>';
 
 			    echo '<td>';
-			    echo '<a class="btn btn-warning botonGestionEvento" href="modificarEvento.php?id=' . $evento['id'] . '">Modificar</a>';
-			    echo '<a class="btn btn-danger botonGestionEvento" href="javascript:cancelarEvento(' . $evento['id'] . ')">Cancelar</a>';
+			    echo '<a class="btn btn-warning botonSala" href="modificarEvento.php?id=' . $evento['id'] . '">Modificar</a>';
+			    echo '<a class="btn btn-danger botonSala" href="javascript:cancelarEvento(' . $evento['id'] . ')">Cancelar</a>';
 			    echo '</td>';
 			    echo '</tr>';
 			}
