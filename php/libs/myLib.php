@@ -112,7 +112,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
 	<ul class="list-inline botonesMiCuenta">
 	    <li><a class=" btn btn-default" id="buttonSalas" href="gestionSalas.php" role="button">Gestión de salas</a></li>
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
-	    <li><a class=" btn btn-default" id="button3" href="#" role="button">Gestión de eventos</a></li>
+	    <li><a class=" btn btn-default" id="buttonGestionEventos" href="gestionEventos.php" role="button">Gestión de eventos</a></li>
 	    <li><a class=" btn btn-default" id="button4" href="#" role="button">Gestión de empresas</a></li>
             <li><a class=" btn btn-default" id="buttonModificarMisDatos" href="modificarMisDatos.php" role="button">Modificar mis datos</a></li>
 	</ul>

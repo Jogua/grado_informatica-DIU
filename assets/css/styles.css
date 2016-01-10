@@ -168,11 +168,16 @@ fieldset{
 }
 
 .botonSala{
-    width: 84;
+    width: 84px;
     margin-top: 5px;
 }
 
 .botonesMiCuenta{
     text-align: center;
     margin-bottom: 25px;
+}
+
+.botonGestionEvento{
+    width: 84px;
+    margin-top: 5px;
 }
