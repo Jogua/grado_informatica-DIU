@@ -139,7 +139,7 @@ function cargarBotonesMiCuenta($tipoUsuario) {
     } else if ($tipoUsuario == 'Usuario') {
 	?>
 	<ul class="list-inline botonesMiCuenta">
-	    <li><a class=" btn btn-default" id="button1" href="#" role="button">Dar de alta empresa</a></li>
+	    <li><a class=" btn btn-default" id="buttonAltaEmpresa" href="altaEmpresa.php" role="button">Dar de alta empresa</a></li>
 	    <li><a class=" btn btn-default" id="buttonEventosApuntado" href="eventosApuntado.php" role="button">Eventos apuntado</a></li>
 	    <li><a class=" btn btn-default" id="buttonModificarMisDatos" href="modificarMisDatos.php" role="button">Modificar mis datos</a></li>
 	</ul>
