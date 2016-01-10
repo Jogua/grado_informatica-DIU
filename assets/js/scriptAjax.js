@@ -169,6 +169,20 @@ function modificarMisDatos(formulario) {
 }
 
 
+function cancelarEvento(id) {
+    var parametros = {
+	idEvento: id
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/cancelarEvento.php',
+	type: 'POST',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
 $(document).ready(function () {
     $('#formularioModificarSala').ajaxForm(function (response) {
 	$("#resultado").html(response);
