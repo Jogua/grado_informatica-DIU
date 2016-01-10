@@ -46,7 +46,7 @@ if (!isset($_SESSION)) {
 			} else {
 			    ?>
     			<div>
-    			    <a class="izquierda" href="miCuenta.php"> <?= $_SESSION['correo'] ?> (Mi cuenta: <?= $_SESSION['tipo'] ?>)</a>
+    			    <a class="izquierda" href="miCuenta.php"> <?= $_SESSION['correo'] ?></a>
     			    <a class="derecha" href="scripts/cerrarSesion.php">Cerrar sesión</a>
     			</div>
 			    <?php

@@ -15,7 +15,6 @@ if (!empty($_POST['correo']) && !empty($_POST['password'])) {
 	    session_start();
 	    $_SESSION['correo'] = $correo;
 	    $_SESSION['idUsuario'] = $row['id'];
-            $_SESSION['tipo'] = $row['tipo'];
 	    mysqli_close($conexion);
 	    salir2("Se ha iniciado sesión correctamente", 0, "miCuenta.php");
 	} else {
