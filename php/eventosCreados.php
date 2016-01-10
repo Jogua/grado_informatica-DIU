@@ -26,7 +26,7 @@ if (isset($_SESSION['idUsuario'])) {
 	$tipoUsuario = $usuario['tipo'];
 	cargarBotonesMiCuenta($tipoUsuario);
 	?>
-        <script>document.getElementById("buttonEventosCreado").className += " active";</script>
+        <script>document.getElementById("buttonEventosCreados").className += " active";</script>
         <table class="table table-striped">
     	<thead>
     	    <tr>
@@ -40,8 +40,9 @@ if (isset($_SESSION['idUsuario'])) {
     	<tbody>
 		<?php
 		$hoy = date("Y-m-d H:i:s");
-		$sql = "SELECT * FROM evento, usuario_asiste_evento AS asiste "
-			. " WHERE evento.id=asiste.idEvento AND asiste.idUsuario=$idUsuario AND evento.fecha>='$hoy' "
+		$sql = "SELECT evento.* FROM evento, usuario "
+			. " WHERE usuario.idEmpresa=evento.idEmpresa"
+			. " AND evento.fecha>='$hoy' "
 			. " ORDER BY evento.fecha;";
 		$resultado = mysqli_query($conn, $sql);
 		if ($resultado) {
@@ -61,15 +62,15 @@ if (isset($_SESSION['idUsuario'])) {
 			    }
 			    echo '</td>';
 			    echo '<td>' . date('d-m-Y', strtotime($evento['fecha'])) . '<br>' . date('H:i', strtotime($evento['fecha'])) . '</td>';
-			    echo '<td>' . $evento['precio'] . '</td>';
+			    echo '<td>' . $evento['precio'] . ' €</td>';
 
 			    echo '<td>';
-			    echo '<a class="btn btn-danger" href="javascript:desapuntarseEvento(' . $evento['id'] . ')">Desapuntarse</a><br>';
+			    echo '<a class="btn btn-danger" href="javascript:cancelarEvento(' . $evento['id'] . ')">Cancelar evento</a><br>';
 			    echo '</td>';
 			    echo '</tr>';
 			}
 		    } else {
-			echo '<td colspan="5">No estas inscrito a eventos</td>';
+			echo '<td colspan="5">No has creado eventos</td>';
 		    }
 		}
 		?>
