@@ -31,6 +31,7 @@ if (isset($_SESSION['idUsuario'])) {
         echo '<h4 class="nombreSala">Datos de usuario</h4>';
         echo '<hr>';
         ?>
+    <script>document.getElementById("buttonModificarMisDatos").className += " active";</script>
     <form class="form-signin" method="POST" action='javascript:modificarMisDatos(this)' id="formularioModificarDatosUsuario" data-toggle="validator">
             <input type="hidden" id="idUsuario" name="idUsuario" value="<?= $idUsuario ?>"/>
             <div class="form-group">
