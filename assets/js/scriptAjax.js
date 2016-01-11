@@ -65,6 +65,36 @@ function bajaSala(id) {
     });
 }
 
+function altaEmpresa(id) {
+    var parametros = {
+	idEmpresa: id,
+	value: 1
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/cambiarEstadoEmpresa.php',
+	type: 'POST',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
+function bajaEmpresa(id) {
+    var parametros = {
+	idEmpresa: id,
+	value: 0
+    };
+    $.ajax({
+	data: parametros,
+	url: '../php/scripts/cambiarEstadoEmpresa.php',
+	type: 'POST',
+	success: function (response) {
+	    $("#resultado").html(response);
+	}
+    });
+}
+
 function filtroReservarSala() {
     var name = $('#nombreSala').val();
     var cap = $('#capacidadSala').val();

@@ -189,3 +189,16 @@ fieldset{
     width: 100px;
     margin-top: 5px;
 }
+
+#divBajaEmpresa{
+    width: 400px;
+    margin: 0 auto;
+}
+
+#divBajaEmpresa a{
+    margin-top: 10px;
+}
+
+#buttonVolverBajaEmpresa{
+    margin-right: 150px;
+}
