@@ -13,7 +13,7 @@ $conn = dbConnect();
 $sql = "DELETE FROM usuario_asiste_evento WHERE idEvento=$idEvento AND idUsuario=$idUsuario";
 $resultado = mysqli_query($conn, $sql);
 if ($resultado) {
-    salir2("Se ha desapuntado del evento correctamente.", 0, "evento.php?id=" . $idEvento);
+    salir2("Se ha desapuntado del evento correctamente.", 0, "eventosApuntado.php");
 } else {
     salir2("Ha ocurrido un error. Vuelve a intentarlo", -1, "evento.php?id=" . $idEvento);
 }

@@ -14,7 +14,7 @@ $sql = "INSERT INTO usuario_asiste_evento (idUsuario,idEvento) "
         . " VALUES ($idUsuario,$idEvento);";
 $resultado = mysqli_query($conn, $sql);
 if ($resultado) {
-    salir2("Se ha apuntado al evento correctamente.", 0, "evento.php?id=" . $idEvento);
+    salir2("Se ha apuntado al evento correctamente.", 0, "eventosApuntado.php");
 } else {
     salir2("Ha ocurrido un error. Vuelve a intentarlo", -1, "evento.php?id=" . $idEvento);
 }
