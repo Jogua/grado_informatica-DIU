@@ -34,29 +34,39 @@ if (isset($_SESSION['idUsuario'])) {
         <script>document.getElementById("buttonAltaEmpresa").className += " active";</script>
         <form class="form-signin" method="POST" action='scripts/altaEmpresa.php' id="formularioAltaEmpresa" data-toggle="validator" enctype="multipart/form-data">
             <input type="hidden" id="idUsuario" name="idUsuario" value="<?= $idUsuario ?>"/>
-            <div class="form-group">
+            <div class="form-group has-feedback">
                 <label>Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" autofocus required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group">
+            <div class="form-group has-feedback">
                 <label>CIF</label>
                 <input type="text" class="form-control" id="cif" name="cif" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group">
+            <div class="form-group has-feedback">
                 <label>Descripción</label>
                 <textarea class="form-control text-justify" id="descripcion" name="descripcion" rows="10" required></textarea>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group">
+            <div class="form-group has-feedback">
                 <label>Web</label>
                 <input type="text" class="form-control" id="web" name="web" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group">
+            <div class="form-group has-feedback">
                 <label>Imagen</label><br>
                 <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group">
+            <div class="form-group has-feedback">
                 <label>¿Sólo organiza eventos?
-                <input type="checkbox" class="form-control" id="checkbox" name="checkbox"></label>
+                    <input type="checkbox" class="form-control" id="checkbox" name="checkbox"></label>
             </div>
 
             <div class="form-group">
