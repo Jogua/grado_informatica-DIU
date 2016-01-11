@@ -34,11 +34,11 @@ if (isset($_SESSION['idUsuario'])) {
         <script>document.getElementById("buttonModificarMisDatos").className += " active";</script>
         <form class="form-signin" method="POST" action='javascript:modificarMisDatos(this)' id="formularioModificarDatosUsuario" data-toggle="validator">
     	<input type="hidden" id="idUsuario" name="idUsuario" value="<?= $idUsuario ?>"/>
-    	<div class="form-group">
+    	<div class="form-group has-feedback">
     	    <label>Nombre</label>
     	    <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $usuario['nombre'] ?>" autofocus>
     	</div>
-    	<div class="form-group">
+    	<div class="form-group has-feedback">
     	    <label>Apellidos</label>
     	    <input type="text" class="form-control" id="apellidos" name="apellidos" value='<?= $usuario['apellidos'] ?>'>
     	</div>
@@ -50,17 +50,17 @@ if (isset($_SESSION['idUsuario'])) {
     	</div>
     	<div class="form-group has-feedback">
     	    <label>Contraseña</label>
-    	    <input type="password" id="pass" name="pass" data-minlength="6" data-minlength-error="Mínimo 6 caracteres" class="form-control">
+    	    <input type="password" id="pass" name="pass" data-minlength="6" data-minlength-error="Mínimo 6 caracteres" class="form-control" required>
     	    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
     	    <div class="help-block with-errors"></div>
     	</div>
     	<div class="form-group has-feedback">
     	    <label>Repetir contraseña</label>
-    	    <input type="password" class="form-control" id="pass2" name="pass2" data-match="#pass" data-match-error="Las contraseñas no coinciden">
+    	    <input type="password" class="form-control" id="pass2" name="pass2" data-match="#pass" data-match-error="Las contraseñas no coinciden" required>
     	    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
     	    <div class="help-block with-errors"></div>
     	</div>
-    	<div class="form-group">
+    	<div class="form-group has-feedback">
     	    <label>Teléfono</label>
     	    <input type="tel" class="form-control" id="telefono" name="telefono" value='<?= $usuario['telefono'] ?>'>
     	</div>
