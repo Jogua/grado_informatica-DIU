@@ -236,6 +236,9 @@ $(document).ready(function () {
     $('#formularioAltaEmpresa').ajaxForm(function (response) {
 	$("#resultado").html(response);
     });
+    $('#formularioModificarEmpresa').ajaxForm(function (response) {
+	$("#resultado").html(response);
+    });
     $('#formularioCrearEvento').ajaxForm(function (response) {
 	$("#resultado").html(response);
     });
