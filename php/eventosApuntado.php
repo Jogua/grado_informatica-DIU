@@ -41,7 +41,7 @@ if (isset($_SESSION['idUsuario'])) {
 		<?php
 		$hoy = date("Y-m-d H:i:s");
 		$sql = "SELECT * FROM evento, usuario_asiste_evento AS asiste "
-			. " WHERE evento.id=asiste.idEvento AND asiste.idUsuario=$idUsuario AND evento.fecha>='$hoy' "
+			. " WHERE evento.id=asiste.idEvento AND asiste.idUsuario=$idUsuario AND evento.estado=1 AND evento.fecha>='$hoy' "
 			. " ORDER BY evento.fecha;";
 		$resultado = mysqli_query($conn, $sql);
 		if ($resultado) {
