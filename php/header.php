@@ -22,7 +22,7 @@ if (!isset($_SESSION)) {
                 <a href="index.php"><img id="imagenLogo" src="../assets/images/coworking-logo.png" alt="Logo Congreso" /></a>
             </div>
             <div class="col-md-8">
-                <fieldset>
+                <!--<fieldset>-->
                     <div id="cuadroSesion">
 			<?php
 			if (!isset($_SESSION['correo'])) {
@@ -30,11 +30,11 @@ if (!isset($_SESSION)) {
     			<form class="form-inline" id="formularioInicioSesion" action="javascript:enviarFormularioInicioSesion()">
     			    <div class="form-group">
     				<label class="sr-only" for="correo">Correo electrónico</label>
-				<input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico" required>
+    				<input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico" required>
     			    </div>
     			    <div class="form-group">
     				<label class="sr-only" for="pass">Contraseña</label>
-				<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+    				<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
     			    </div>
     			    <button type="submit" class="btn btn-default" data-loading-text="Iniciando...">Enviar</button>
     			</form>
@@ -45,15 +45,19 @@ if (!isset($_SESSION)) {
 			    <?php
 			} else {
 			    ?>
-    			<div>
-    			    <a class="izquierda" href="miCuenta.php"> <?= $_SESSION['correo'] ?></a>
-    			    <a class="derecha" href="scripts/cerrarSesion.php">Cerrar sesión</a>
+    			<div class="row">
+    			    <div class="col-lg-9 col-md-9 col-sm-9">
+				<a class="btn btn-default derecha" href="miCuenta.php"><?= $_SESSION['correo'] ?></a>
+    			    </div>
+    			    <div class="col-lg-3 col-md-3 col-sm-3">
+    				<a class="btn btn-default derecha" href="scripts/cerrarSesion.php">Cerrar sesión</a>
+    			    </div>
     			</div>
 			    <?php
 			}
 			?>
                     </div>
-                </fieldset>
+                <!--</fieldset>-->
             </div>
         </div>
     </header>
