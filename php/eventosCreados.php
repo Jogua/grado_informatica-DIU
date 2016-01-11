@@ -41,7 +41,7 @@ if (isset($_SESSION['idUsuario'])) {
 		<?php
 		$hoy = date("Y-m-d H:i:s");
 		$sql = "SELECT evento.* FROM evento, usuario "
-			. " WHERE usuario.idEmpresa=evento.idEmpresa"
+			. " WHERE usuario.idEmpresa=evento.idEmpresa "
 			. " AND evento.fecha>='$hoy' "
 			. " ORDER BY evento.fecha;";
 		$resultado = mysqli_query($conn, $sql);
@@ -65,7 +65,13 @@ if (isset($_SESSION['idUsuario'])) {
 			    echo '<td>' . $evento['precio'] . ' €</td>';
 
 			    echo '<td>';
-			    echo '<a class="btn btn-danger" href="javascript:cancelarEvento(' . $evento['id'] . ')">Cancelar evento</a><br>';
+			    if (!$evento['estado']) {
+				echo '<a class="btn btn-primary botonSala" href="javascript:altaEvento(' . $evento['id'] . ')">Alta evento</a><br>';
+			    }
+			    echo '<a class="btn btn-warning botonSala" href="modificarEvento.php?id=' . $evento['id'] . '">Modificar</a><br>';
+			    if ($evento['estado']) {
+				echo '<a class="btn btn-danger botonSala" href="javascript:cancelarEvento(' . $evento['id'] . ')">Cancelar</a><br>';
+			    }
 			    echo '</td>';
 			    echo '</tr>';
 			}
@@ -76,7 +82,7 @@ if (isset($_SESSION['idUsuario'])) {
 		?>
     	</tbody>
         </table>
-	<a class="btn btn-primary" href="crearEvento.php">Crear Evento</a>
+        <a class="btn btn-primary" href="crearEvento.php">Crear Evento</a>
 	<?php
     }
     mysqli_close($conn);

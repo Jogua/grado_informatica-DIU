@@ -31,7 +31,7 @@ include 'header.php';
                 include 'libs/myLib.php';
                 $conn = dbConnect();
 
-                $sql = 'SELECT * FROM evento ORDER BY fecha;';
+                $sql = 'SELECT * FROM evento WHERE estado=1 ORDER BY fecha;';
                 $resultado = mysqli_query($conn, $sql);
 
                 while ($evento = mysqli_fetch_assoc($resultado)) {

@@ -5,7 +5,7 @@ include '../libs/myLib.php';
 $idEvento = $_POST['idEvento'];
 
 $conn = dbConnect();
-$sql = "UPDATE evento SET estado=0 WHERE id=$idEvento";
+$sql = "UPDATE evento SET estado=1 WHERE id=$idEvento";
 $resultado = mysqli_query($conn, $sql);
 
 if ($resultado) {

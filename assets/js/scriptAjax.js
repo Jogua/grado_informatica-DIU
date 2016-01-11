@@ -168,6 +168,19 @@ function modificarMisDatos(formulario) {
     });
 }
 
+function altaEvento(id) {
+    var parametros = {
+        idEvento: id
+    };
+    $.ajax({
+        data: parametros,
+        url: '../php/scripts/altaEvento.php',
+        type: 'POST',
+        success: function (response) {
+            $("#resultado").html(response);
+        }
+    });
+}
 
 function cancelarEvento(id) {
     var parametros = {
