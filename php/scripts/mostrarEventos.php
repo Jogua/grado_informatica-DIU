@@ -21,7 +21,7 @@
 	    $nombre_filtro = "";
 	}
 
-	$todosEventos = "SELECT * FROM evento WHERE evento.nombre like '%$nombre_filtro%' ORDER BY fecha;";
+	$todosEventos = "SELECT * FROM evento WHERE evento.nombre like '%$nombre_filtro%' AND estado=1 ORDER BY fecha;";
 
 	$resultado = mysqli_query($conn, $todosEventos);
 	if (mysqli_num_rows($resultado) == 0) {

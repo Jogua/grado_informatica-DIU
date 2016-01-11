@@ -66,7 +66,7 @@ if (isset($_SESSION['idUsuario'])) {
 
 			    echo '<td>';
 			    if (!$evento['estado']) {
-				echo '<a class="btn btn-primary botonSala" href="javascript:altaEvento(' . $evento['id'] . ')">Alta evento</a><br>';
+				echo '<a class="btn btn-success botonSala" href="javascript:altaEvento(' . $evento['id'] . ')">Activar</a><br>';
 			    }
 			    echo '<a class="btn btn-warning botonSala" href="modificarEvento.php?id=' . $evento['id'] . '">Modificar</a><br>';
 			    if ($evento['estado']) {
