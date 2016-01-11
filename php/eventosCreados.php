@@ -76,7 +76,7 @@ if (isset($_SESSION['idUsuario'])) {
 		?>
     	</tbody>
         </table>
-	<a class="btn btn-primary" href="#">Crear Evento</a>
+	<a class="btn btn-primary" href="crearEvento.php">Crear Evento</a>
 	<?php
     }
     mysqli_close($conn);
