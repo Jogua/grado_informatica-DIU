@@ -2,12 +2,13 @@
 
 include "../libs/myLib.php";
 
-if (!empty($_POST['idSala']) && !empty($_POST['nombre']) && !empty($_POST['descripcion']) && !empty($_POST['ubicacion']) && !empty($_POST['capacidad'])) {
-    $idSala = $_POST['idSala'];
+if (!empty($_POST['idEvento']) && !empty($_POST['nombre']) && !empty($_POST['fecha']) && !empty($_POST['hora']) && !empty($_POST['descripcion']) && !empty($_POST['precio']) && !empty($_POST['plazas'])) {
+    $idEvento = $_POST['idEvento'];
     $nombre = $_POST['nombre'];
+    $fecha = invertirFecha($_POST['fecha']) . ' ' . $_POST['hora'];
     $descripcion = $_POST['descripcion'];
-    $ubicacion = $_POST['ubicacion'];
-    $capacidad = $_POST['capacidad'];
+    $precio = $_POST['precio'];
+    $plazas = $_POST['plazas'];
     $subidaCorrecta = false;
     if (isset($_FILES['imagen']) && $_FILES['imagen']['name']) {
 	if ($_FILES['imagen']['error'] > 0) {
@@ -16,14 +17,14 @@ if (!empty($_POST['idSala']) && !empty($_POST['nombre']) && !empty($_POST['descr
 	    $permitidos = array("image/jpg", "image/jpeg", "image/png");
 	    $limite_kb = 2048;
 	    if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024) {
-		$carpeta = "../../assets/images/salas";
+		$carpeta = "../../assets/images/eventos";
 		if (!is_dir($carpeta)) {
 		    mkdir($carpeta);
 		}
 		$formato = "." . split("/", $_FILES['imagen']['type'])[1];
-		$nombreArchivo = "sala_" . $idSala . $formato;
+		$nombreArchivo = "evento_" . $idEvento . $formato;
 		$ruta = $carpeta . "/" . $nombreArchivo;
-		$ruta_old = $carpeta . "/sala_" . $idSala . "_old" . $formato;
+		$ruta_old = $carpeta . "/evento_" . $idEvento . "_old" . $formato;
 		rename($ruta, $ruta_old);
 		$subidaCorrecta = @move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
 	    } else {
@@ -32,7 +33,7 @@ if (!empty($_POST['idSala']) && !empty($_POST['nombre']) && !empty($_POST['descr
 	}
     }
     $conexion = dbConnect();
-    $sql = "UPDATE sala SET nombre='$nombre', descripcion='$descripcion', ubicacion='$ubicacion', capacidad=$capacidad WHERE id=$idSala;";
+    $sql = "UPDATE evento SET nombre='$nombre', fecha='$fecha', descripcion='$descripcion', plazas=$plazas, precio=$precio WHERE id=$idEvento;";
     $resultado = mysqli_query($conexion, $sql);
     mysqli_close($conexion);
     if (!$resultado) {

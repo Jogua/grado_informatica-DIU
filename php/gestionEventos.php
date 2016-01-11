@@ -46,7 +46,7 @@ if (isset($_SESSION['idUsuario'])) {
     	<tbody>
 		<?php
 		$hoy = date("Y-m-d H:i:s");
-		$sql = "SELECT evento.id, evento.nombre, evento.fecha, evento.precio, empresa.nombre AS responsable  FROM evento, empresa "
+		$sql = "SELECT evento.id, evento.nombre, evento.fecha, evento.precio, empresa.nombre AS responsable, evento.estado FROM evento, empresa "
 			. " WHERE evento.`idEmpresa`=empresa.id AND evento.fecha>='$hoy' "
 			. " ORDER BY evento.fecha;";
 		$resultado = mysqli_query($conn, $sql);
@@ -71,8 +71,13 @@ if (isset($_SESSION['idUsuario'])) {
 			    echo '<td>' . $evento['precio'] . ' €</td>';
 
 			    echo '<td>';
+			    if (!$evento['estado']) {
+				echo '<a class="btn btn-success botonSala" href="javascript:altaEvento(' . $evento['id'] . ')">Activar</a>';
+			    }
 			    echo '<a class="btn btn-warning botonSala" href="modificarEvento.php?id=' . $evento['id'] . '">Modificar</a>';
-			    echo '<a class="btn btn-danger botonSala" href="javascript:cancelarEvento(' . $evento['id'] . ')">Cancelar</a>';
+			    if ($evento['estado']) {
+				echo '<a class="btn btn-danger botonSala" href="javascript:cancelarEvento(' . $evento['id'] . ')">Cancelar</a>';
+			    }
 			    echo '</td>';
 			    echo '</tr>';
 			}

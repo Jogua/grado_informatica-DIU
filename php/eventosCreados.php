@@ -24,6 +24,9 @@ if (isset($_SESSION['idUsuario'])) {
     if ($resultado) {
 	$usuario = mysqli_fetch_assoc($resultado);
 	$tipoUsuario = $usuario['tipo'];
+	if ($tipoUsuario == 'Administrador') {
+	    header('Location: gestionEventos.php');
+	}
 	cargarBotonesMiCuenta($tipoUsuario);
 	?>
         <script>document.getElementById("buttonEventosCreados").className += " active";</script>
