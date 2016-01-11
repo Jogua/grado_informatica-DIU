@@ -11,10 +11,6 @@ header{
     margin: 0;
 }
 
-fieldset{
-    border: 2px solid;
-}
-
 #barraSuperior{
     margin-bottom: 2%;
 }
@@ -22,6 +18,10 @@ fieldset{
 #cuadroSesion{
     height: 104px;
     padding: 25px;
+}
+
+#divPreguntaContrasenaOlvidada{
+    margin-top: 10px;
 }
 
 #menuPrincipal{
