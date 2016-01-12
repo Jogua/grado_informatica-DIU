@@ -76,6 +76,7 @@ if (isset($_SESSION['idUsuario'])) {
 
 		<div class="form-group">
 		    <button type="submit" class="btn btn-primary derecha">Guardar cambios</button>
+		    <a href="miCuenta.php" class="btn btn-danger izquierda">Cancelar</a>   
 		</div>
 	    </form>
 	    <?php

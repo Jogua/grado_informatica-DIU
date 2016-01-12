@@ -23,7 +23,7 @@ if (!empty($_POST['idEmpresa']) && !empty($_POST['nombre']) && !empty($_POST['ci
 		$formato = "." . split("/", $_FILES['imagen']['type'])[1];
 		$nombreArchivo = "empresa_" . $idEmpresa . $formato;
 		$ruta = $carpeta . "/" . $nombreArchivo;
-		$ruta_old = $carpeta . "/evento_" . $idEvento . "_old" . $formato;
+		$ruta_old = $carpeta . "/empresa_" . $idEmpresa . "_old" . $formato;
 		rename($ruta, $ruta_old);
 		$subidaCorrecta = @move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
 	    } else {
@@ -45,6 +45,6 @@ if (!empty($_POST['idEmpresa']) && !empty($_POST['nombre']) && !empty($_POST['ci
 	if (isset($ruta_old)) {
 	    unlink($ruta_old);
 	}
-	salir2("Se han guardado los cambios correctamente", 0, "miCuenta.php");
+	salir2("Se han guardado los cambios correctamente", 0, "empresa.php?id=$idEmpresa");
     }
 }
