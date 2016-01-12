@@ -37,6 +37,7 @@ if (isset($_SESSION['idUsuario'])) {
     		<th class="col10">Ubicación</th>
     		<th class="col10">Fecha</th>
     		<th class="col10">Precio</th>
+    		<th class="col10">Asistentes</th>
     		<th class="col10"></th>
     	    </tr>
     	</thead>
@@ -51,6 +52,7 @@ if (isset($_SESSION['idUsuario'])) {
 		if ($resultado) {
 		    if (mysqli_num_rows($resultado)) {
 			while ($evento = mysqli_fetch_assoc($resultado)) {
+			    $idEvento = $evento['id'];
 			    echo '<tr>';
 			    echo '<td>' . $evento['nombre'] . '</td>';
 			    echo '<td>';
@@ -66,6 +68,13 @@ if (isset($_SESSION['idUsuario'])) {
 			    echo '</td>';
 			    echo '<td>' . date('d-m-Y', strtotime($evento['fecha'])) . '<br>' . date('H:i', strtotime($evento['fecha'])) . '</td>';
 			    echo '<td>' . $evento['precio'] . ' €</td>';
+			    $sqlAsistentes = "SELECT * FROM usuario_asiste_evento WHERE idEvento=$idEvento;";
+			    $resultadoAsistentes = mysqli_query($conn, $sqlAsistentes);
+			    if ($resultadoAsistentes) {
+				echo '<td>' . mysqli_num_rows($resultadoAsistentes) . ' de ' . $evento['plazas'] . '</td>';
+			    } else {
+				echo '<td>Desconocido</td>';
+			    }
 
 			    echo '<td>';
 			    if (!$evento['estado']) {

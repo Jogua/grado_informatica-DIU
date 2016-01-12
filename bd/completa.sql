@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-01-2016 a las 04:19:14
+-- Tiempo de generación: 12-01-2016 a las 04:29:59
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -193,6 +193,11 @@ CREATE TABLE IF NOT EXISTS `usuario_asiste_evento` (
 INSERT INTO `usuario_asiste_evento` (`idUsuario`, `idEvento`) VALUES
 (1, 1),
 (5, 1),
+(5, 2),
+(1, 3),
+(2, 3),
+(5, 3),
+(2, 4),
 (5, 4);
 
 --
