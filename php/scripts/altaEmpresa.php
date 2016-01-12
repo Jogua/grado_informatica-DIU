@@ -33,16 +33,17 @@ if (!empty($_POST['idUsuario']) && !empty($_POST['nombre']) && !empty($_POST['ci
 
 		$conexion = dbConnect();
 		$sql = "INSERT INTO empresa (nombre, cif, descripcion, web, idResponsable, tipo) "
-			. " VALUES ('$nombre', '$cif', '$descripcion', '$web', '$idUsuario', '$rol');";
+			. " VALUES ('$nombre', '$cif', '$descripcion', '$web', $idUsuario, '$rol');";
 		mysqli_query($conexion, $sql);
-
-		$nombreArchivo = "empresa_" . $cif . $formato;
+		$idEmpresa = mysqli_insert_id($conexion);
+		$nombreArchivo = "empresa_" . $idEmpresa . $formato;
 		$ruta = $carpeta . "/" . $nombreArchivo;
 		$rutaImagenBD = substr($ruta, 6);
 		rename($ruta_old, $ruta);
-		$sql = "UPDATE empresa SET imagen='$rutaImagenBD' WHERE cif=$cif;";
+		$sql = "UPDATE empresa SET imagen='$rutaImagenBD' WHERE id=$idEmpresa;";
 		$resultado = mysqli_query($conexion, $sql);
-
+		$sql = "UPDATE usuario SET idEmpresa=$idEmpresa WHERE id=$idUsuario;";
+		$resultado = mysqli_query($conexion, $sql);
 		if (!$resultado) {
 		    if ($subidaCorrecta) {//Si no se ha podido registrar borra la foto en caso de que se haya subido.
 			unlink($ruta);

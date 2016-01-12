@@ -195,6 +195,12 @@ header{
     margin: 0 auto;
 }
 
+#checkbox{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+
 #divBajaEmpresa a{
     margin-top: 10px;
 }
