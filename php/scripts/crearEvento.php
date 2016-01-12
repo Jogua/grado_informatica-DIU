@@ -2,11 +2,12 @@
 
 include "../libs/myLib.php";
 
-if (!empty($_POST['nombre']) && !empty($_POST['fecha']) && !empty($_POST['hora']) && !empty($_POST['descripcion']) && !empty($_POST['precio']) && !empty($_POST['plazas']) && !empty($_POST['selectSalas']) && !isset($_POST['imagen'])) {
+if (!empty($_POST['nombre']) && !empty($_POST['fecha']) && !empty($_POST['hora']) && !empty($_POST['descripcion']) && isset($_POST['precio']) && !empty($_POST['plazas']) && !empty($_POST['selectSalas']) && !isset($_POST['imagen'])) {
     $idUsuario = $_POST['idUsuario'];
     $nombre = $_POST['nombre'];
     $fecha = invertirFecha($_POST['fecha']) . ' ' . $_POST['hora'];
-    $fechaSala = invertirFecha($_POST['fecha']);
+    $fechaSalaInicio = invertirFecha($_POST['fecha']) . " 00:00";
+    $fechaSalaFin = invertirFecha($_POST['fecha']) . " 23:59";
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $plazas = $_POST['plazas'];
@@ -45,7 +46,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['fecha']) && !empty($_POST['hora']
 		    $idEvento = mysqli_insert_id($conexion);
 		    $sql = "INSERT INTO sala_aloja_evento (idEvento, idSala) VALUES ($idEvento, $idSala);";
 		    mysqli_query($conexion, $sql);
-		    $sql = "INSERT INTO empresa_usa_sala (idEmpresa, idSala, fechaInicio, fechaFin) VALUES ($idEvento, $idSala, '$fechaSala', '$fechaSala');";
+		    $sql = "INSERT INTO empresa_usa_sala (idEmpresa, idSala, fechaInicio, fechaFin) VALUES ($idEmpresa, $idSala, '$fechaSalaInicio', '$fechaSalaFin');";
 		    $resultado = mysqli_query($conexion, $sql);
 		    if ($resultado) {
 			$nombreArchivo = "evento_" . $idEvento . $formato;
@@ -58,15 +59,15 @@ if (!empty($_POST['nombre']) && !empty($_POST['fecha']) && !empty($_POST['hora']
 			    if ($subidaCorrecta) {//Si no se ha podido registrar borra la foto en caso de que se haya subido.
 				unlink($ruta);
 			    }
-			    salir2("No se han podido guardar los cambios", -1, 0);
+			    salir2("No se han podido guardar los cambios1", -1, 0);
 			} else {
 			    salir2("Evento creado correctamente", 0, "eventosCreados.php");
 			}
 		    } else {
-			salir2("No se han podido guardar los cambios", -1, 0);
+			salir2("No se han podido guardar los cambios2", -1, 0);
 		    }
 		} else {
-		    salir2("No se han podido guardar los cambios", -1, 0);
+		    salir2("No se han podido guardar los cambios3", -1, 0);
 		}
 	    } else {
 		salir2("La imagen no tiene un formato apropiado o su tamaño es superior a 2MB", -1, 0);

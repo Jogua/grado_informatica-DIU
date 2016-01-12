@@ -56,8 +56,8 @@ if (isset($_SESSION['idUsuario'])) {
 			    echo '<td>' . $empresa['nombre'] . '</td>';
 			    echo '<td>' . $empresa['cif'] . '</td>';
 			    echo '<td>';
-			    if (strlen($empresa['descripcion']) > 130) {
-				echo str_split($empresa['descripcion'], 130)[0] . '... ';
+			    if (strlen($empresa['descripcion']) > 50) {
+				echo str_split($empresa['descripcion'], 50)[0] . '... ';
 			    } else {
 				echo $empresa['descripcion'];
 			    };

@@ -33,7 +33,7 @@ if (isset($_SESSION['idUsuario'])) {
         <table class="table table-striped">
     	<thead>
     	    <tr>
-    		<th class="col10">Nombre</th>
+    		<th class="col20">Nombre</th>
     		<th class="col10">Ubicación</th>
     		<th class="col10">Fecha</th>
     		<th class="col10">Precio</th>
@@ -44,7 +44,7 @@ if (isset($_SESSION['idUsuario'])) {
 		<?php
 		$hoy = date("Y-m-d H:i:s");
 		$sql = "SELECT evento.* FROM evento, usuario "
-			. " WHERE usuario.idEmpresa=evento.idEmpresa "
+			. " WHERE usuario.idEmpresa=evento.idEmpresa AND usuario.id=$idUsuario"
 			. " AND evento.fecha>='$hoy' "
 			. " ORDER BY evento.fecha;";
 		$resultado = mysqli_query($conn, $sql);

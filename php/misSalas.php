@@ -45,13 +45,13 @@ if (isset($_SESSION['idUsuario'])) {
     	    </tr>
     	</thead>
     	<tbody>
-		<?php 
+		<?php
 		$hoy = date("Y-m-d");
 		$sql = "SELECT usa.id, sala.nombre, sala.ubicacion, sala.capacidad, usa.fechaInicio, usa.fechaFin "
 			. " FROM sala, empresa_usa_sala AS usa "
 			. " WHERE sala.id=usa.idSala AND usa.idEmpresa=$idEmpresa AND usa.fechaFin>='$hoy' "
 			. " ORDER BY usa.fechaInicio;";
-		
+
 		$resultado = mysqli_query($conn, $sql);
 		if ($resultado) {
 		    while ($sala = mysqli_fetch_assoc($resultado)) {
@@ -59,8 +59,8 @@ if (isset($_SESSION['idUsuario'])) {
 			echo '<td>' . $sala['nombre'] . '</td>';
 			echo '<td>' . $sala['ubicacion'] . '</td>';
 			echo '<td>' . $sala['capacidad'] . '</td>';
-			echo '<td>' . $sala['fechaInicio'] . '</td>';
-			echo '<td>' . $sala['fechaFin'] . '</td>';
+			echo '<td>' . date('d-m-Y', strtotime($sala['fechaInicio'])) . '</td>';
+			echo '<td>' . date('d-m-Y', strtotime($sala['fechaFin'])) . '</td>';
 
 			echo '<td>';
 			echo '<a class="btn btn-danger" href="javascript:cancelarReserva(' . $sala['id'] . ')">Cancelar reserva</a><br>';

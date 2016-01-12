@@ -7,7 +7,7 @@ $idSala = $_POST['idSala'];
 $fechaInicioArray = explode("-", $_POST['fechaInicio']);
 $fechaFinArray = explode("-", $_POST['fechaFin']);
 $fechaInicio = $fechaInicioArray[2] . "-" . $fechaInicioArray[1] . "-" . $fechaInicioArray[0];
-$fechaFin = $fechaFinArray[2] . "-" . $fechaFinArray[1] . "-" . $fechaFinArray[0];
+$fechaFin = $fechaFinArray[2] . "-" . $fechaFinArray[1] . "-" . $fechaFinArray[0] . " 23:59";
 
 $conn = dbConnect();
 $sql = "SELECT * FROM empresa_usa_sala WHERE idSala=$idSala AND ((fechaInicio>='$fechaInicio' AND fechaInicio<'$fechaFin') OR (fechaFin>'$fechaInicio' AND fechaInicio<='$fechaFin'));";

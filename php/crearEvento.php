@@ -59,7 +59,7 @@ if (isset($_SESSION['idUsuario'])) {
 
     	<div class="form-group has-feedback">
     	    <label>Precio</label>
-    	    <input type="number" id="precio" name="precio" min="1" class="form-control" placeholder="50"  required>
+    	    <input type="number" id="precio" name="precio" min="0" class="form-control" placeholder="50"  required>
     	    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
     	    <div class="help-block with-errors"></div>
     	</div>
