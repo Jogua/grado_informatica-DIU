@@ -29,7 +29,7 @@ if (isset($_SESSION['idUsuario'])) {
         echo '<h4 class="nombreSala">Datos del evento</h4>';
         echo '<hr>';
         ?>
-        <form class="form-signin" method="POST" id="formularioCrearEvento" action="scripts/crearEvento.php" data-toggle="validator" enctype="multipart/form-data">
+    <form class="form-signin" method="POST" id="formularioCrearEvento" action="scripts/crearEvento.php" onsubmit="validarSala(this)" data-toggle="validator" enctype="multipart/form-data">
             <input type="hidden" id="idUsuario" name="idUsuario" value="<?= $idUsuario ?>"/>
             <div class="form-group has-feedback">
                 <label>Nombre</label>
@@ -40,7 +40,7 @@ if (isset($_SESSION['idUsuario'])) {
             <div class="form-group has-feedback">
                 <label>Fecha</label>
                 <div class="input-group date" data-provide="datepicker">
-                    <input type="text" class="form-control" id="fecha" name="fecha" placeholder="dd-mm-aaaa" required>
+                    <input type="text" class="form-control" id="fecha" name="fecha" placeholder="dd-mm-aaaa" onchange="filtrarSalasParaEvento()" required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -66,7 +66,7 @@ if (isset($_SESSION['idUsuario'])) {
 
             <div class="form-group has-feedback">
                 <label>Plazas</label>
-                <input type="number" id="plazas" name="plazas" min="1" class="form-control" placeholder="10"  required>
+                <input type="number" id="plazas" name="plazas" min="1" class="form-control" placeholder="10" onchange="filtrarSalasParaEvento()" required>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <div class="help-block with-errors"></div>
             </div>
@@ -74,6 +74,15 @@ if (isset($_SESSION['idUsuario'])) {
             <div class="form-group has-feedback">
                 <label>Imagen</label><br>
                 <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group has-feedback">
+                <label>Sala</label><br>
+		<div id="salasReservarEvento">
+		    <select class="form-control" id="selectSalas" name="selectSalas" required>
+		    </select>
+		</div>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <div class="help-block with-errors"></div>
             </div>
