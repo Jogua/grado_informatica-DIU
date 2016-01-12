@@ -6,6 +6,11 @@ echo '<select class="form-control" id="selectSalas" name="selectSalas" required>
 if (!empty($_POST['fecha']) && !empty($_POST['plazas'])) {
     $fecha = invertirFecha($_POST['fecha']);
     $plazas = $_POST['plazas'];
+    if (isset($_POST['idSalaDefault'])) {
+	$idSala = $_POST['idSalaDefault'];
+    } else {
+	$idSala = -1;
+    }
 
     $conn = dbConnect();
     $sqlSalas = "SELECT * FROM sala WHERE sala.estado=1 AND sala.capacidad>=$plazas AND sala.id NOT IN ("
@@ -15,7 +20,11 @@ if (!empty($_POST['fecha']) && !empty($_POST['plazas'])) {
     $resultado = mysqli_query($conn, $sqlSalas);
     if ($resultado) {
 	while ($sala = mysqli_fetch_assoc($resultado)) {
-	    echo '<option value="' . $sala['id'] . '">' . $sala['nombre'] . ' (' . $sala['capacidad'] . ' plazas)</option>';
+	    if ($sala['id'] == $idSala) {
+		echo '<option selected value="' . $sala['id'] . '">' . $sala['nombre'] . ' (' . $sala['capacidad'] . ' plazas)</option>';
+	    } else {
+		echo '<option value="' . $sala['id'] . '">' . $sala['nombre'] . ' (' . $sala['capacidad'] . ' plazas)</option>';
+	    }
 	}
     }
 }

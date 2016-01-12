@@ -2,13 +2,14 @@
 
 include "../libs/myLib.php";
 
-if (!empty($_POST['idEvento']) && !empty($_POST['nombre']) && !empty($_POST['fecha']) && !empty($_POST['hora']) && !empty($_POST['descripcion']) && !empty($_POST['precio']) && !empty($_POST['plazas'])) {
+if (!empty($_POST['idEvento']) && !empty($_POST['nombre']) && !empty($_POST['fecha']) && !empty($_POST['hora']) && !empty($_POST['descripcion']) && !empty($_POST['precio']) && !empty($_POST['plazas']) && !empty($_POST['selectSalas'])) {
     $idEvento = $_POST['idEvento'];
     $nombre = $_POST['nombre'];
     $fecha = invertirFecha($_POST['fecha']) . ' ' . $_POST['hora'];
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $plazas = $_POST['plazas'];
+    $idSala = $_POST['selectSalas'];
     $subidaCorrecta = false;
     if (isset($_FILES['imagen']) && $_FILES['imagen']['name']) {
 	if ($_FILES['imagen']['error'] > 0) {
@@ -34,6 +35,8 @@ if (!empty($_POST['idEvento']) && !empty($_POST['nombre']) && !empty($_POST['fec
     }
     $conexion = dbConnect();
     $sql = "UPDATE evento SET nombre='$nombre', fecha='$fecha', descripcion='$descripcion', plazas=$plazas, precio=$precio WHERE id=$idEvento;";
+    mysqli_query($conexion, $sql);
+    $sql = "UPDATE sala_aloja_evento SET idSala=$idSala WHERE idEvento=$idEvento;";
     $resultado = mysqli_query($conexion, $sql);
     mysqli_close($conexion);
     if (!$resultado) {
@@ -46,6 +49,6 @@ if (!empty($_POST['idEvento']) && !empty($_POST['nombre']) && !empty($_POST['fec
 	if (isset($ruta_old)) {
 	    unlink($ruta_old);
 	}
-	salir2("Se han guardado los cambios correctamente", 0, "gestionSalas.php");
+	salir2("Se han guardado los cambios correctamente", 0, "eventosCreados.php");
     }
 }

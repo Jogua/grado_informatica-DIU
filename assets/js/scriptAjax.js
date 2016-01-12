@@ -228,10 +228,14 @@ function cancelarEvento(id) {
 
 function filtrarSalasParaEvento() {
     var form = document.getElementById('formularioCrearEvento');
-    var parametros = {
-	fecha: form.fecha.value,
-	plazas: form.plazas.value
-    };
+    var parametros = {};
+    parametros.idSalaDefault = -1;
+    if (!form) {
+	form = document.getElementById('formularioModificarEvento');
+	parametros.idSalaDefault = form.idSalaDefault.value;
+    }
+    parametros.fecha = form.fecha.value;
+    parametros.plazas = form.plazas.value;
     $.ajax({
 	data: parametros,
 	url: '../php/scripts/filtrarSalasParaEvento.php',
