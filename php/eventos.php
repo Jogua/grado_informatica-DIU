@@ -19,7 +19,7 @@ include 'header.php';
                 <tr>
                     <th class="col10">Nombre</th>
                     <th class="col40">Descripción</th>
-                    <th class="col10">Ubicación</th>
+                    <th class="col10">Sala</th>
                     <th class="col10">Fecha</th>
                     <th class="col10">Plazas</th>
                     <th class="col10">Precio</th>
